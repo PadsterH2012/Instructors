@@ -357,9 +357,56 @@ ls project_working_files/status.md
 
 ## 🔧 Safe System Updates
 
-### Safe Update Principles
+### Automated Update Script
 
-When modifying the project instruction system, follow these core safety principles:
+The system includes an automated update script that can download the latest version from GitHub without requiring git:
+
+**Remote Execution (Recommended)**:
+```bash
+curl -sSL https://raw.githubusercontent.com/PadsterH2012/Instructors/main/project_instructions/scripts/update.sh | bash
+```
+
+**Alternative Remote Execution**:
+```bash
+bash <(curl -sSL https://raw.githubusercontent.com/PadsterH2012/Instructors/main/project_instructions/scripts/update.sh)
+```
+
+**Local Execution** (if you already have the script):
+```bash
+./project_instructions/scripts/update.sh
+```
+
+**What the Update Script Does**:
+- ✅ **Downloads Latest Version**: Fetches the newest version from GitHub as a ZIP file
+- ✅ **Creates Automatic Backup**: Backs up existing files with timestamp before updating
+- ✅ **No Git Required**: Works without git installation or repository setup
+- ✅ **Safe Overwrite**: Replaces all project files with the latest versions
+- ✅ **Colored Output**: Provides clear status messages throughout the process
+- ✅ **Error Handling**: Comprehensive error checking and cleanup
+- ✅ **Verification**: Confirms the update completed successfully
+
+**Update Script Requirements**:
+- `curl` - for downloading files
+- `unzip` - for extracting the downloaded archive
+
+**Update Process**:
+1. Script checks for required dependencies (`curl` and `unzip`)
+2. Creates a timestamped backup of existing project files
+3. Downloads the latest repository version as a ZIP file
+4. Extracts and copies new files to the current directory
+5. Verifies the update was successful
+6. Provides backup location for rollback if needed
+
+**Safety Features**:
+- Automatic backup creation before any changes
+- Dependency verification before starting
+- Complete cleanup of temporary files
+- Verification of successful update
+- Clear error messages if issues occur
+
+### Manual Update Principles
+
+When manually modifying the project instruction system, follow these core safety principles:
 
 - **🔒 Instruction-Only Updates**: Updates should ONLY modify files in the `project_instructions/` folder
 - **🚫 Never Touch Working Files**: NEVER modify `project_working_files/` during updates - this breaks isolation
@@ -527,11 +574,12 @@ cp project_instructions_backup_[timestamp]/instruction_modules/[module_name].md 
 
 ## 🎉 Quick Start Summary
 
-1. **Verify** `project_instructions/` folder structure is intact
-2. **Ensure** `project_input/project_plan.txt` contains your project requirements
-3. **Execute** with: `Follow the instructions in project_instructions/project_instruction_index.md and resume from current status.`
-4. **Add** `--debug` flag for troubleshooting
-5. **Monitor** progress in `project_working_files/status.md`
-6. **Review** outputs in `project_working_files/` folder structure
+1. **Update** to latest version (optional): `curl -sSL https://raw.githubusercontent.com/PadsterH2012/Instructors/main/project_instructions/scripts/update.sh | bash`
+2. **Verify** `project_instructions/` folder structure is intact
+3. **Ensure** `project_input/project_plan.txt` contains your project requirements
+4. **Execute** with: `Follow the instructions in project_instructions/project_instruction_index.md and resume from current status.`
+5. **Add** `--debug` flag for troubleshooting
+6. **Monitor** progress in `project_working_files/status.md`
+7. **Review** outputs in `project_working_files/` folder structure
 
 The system is designed to be **safe**, **resumable**, **quality-focused**, and **completely isolated** for maximum reliability and comprehensive deliverables.
