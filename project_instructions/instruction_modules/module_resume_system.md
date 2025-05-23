@@ -22,18 +22,61 @@
 
 When an agent starts work, they MUST:
 
-1. **Check for High-Level Plan (PRIORITY)**
+1. **Infrastructure Validation (MANDATORY FIRST STEP)**
+   - Check if `../../project_working_files/archivebin/` directory exists
+   - Check if `../../.gitignore` file exists with project_instructions/ exclusion
+   - If infrastructure missing: Apply infrastructure upgrades before proceeding
+   - This ensures all projects have modern infrastructure regardless of creation date
+
+   **Infrastructure Upgrade Process (if needed)**:
+   ```bash
+   # Create archivebin if missing
+   mkdir -p ../../project_working_files/archivebin/
+
+   # Create .gitignore if missing
+   if [ ! -f ../../.gitignore ]; then
+     cat > ../../.gitignore << 'EOF'
+# Project Instruction System (never commit)
+project_instructions/
+
+# Archive and temporary files
+project_working_files/archivebin/
+*.tmp
+*.bak
+*.backup
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+EOF
+   fi
+
+   # Archive status.md if high_level_plan.md exists and status.md exists
+   if [ -f ../../project_working_files/docs/high_level_plan.md ] && [ -f ../../project_working_files/status.md ]; then
+     cp ../../project_working_files/status.md ../../project_working_files/archivebin/status_$(date +%Y%m%d_%H%M%S).md
+     mv ../../project_working_files/status.md ../../project_working_files/archivebin/status.md
+   fi
+   ```
+
+2. **Check for High-Level Plan (PRIORITY)**
    - First check if `../../project_working_files/docs/high_level_plan.md` exists
    - If exists: Use plan-based resume logic (see Section 4)
    - If not exists: Use status.md-based resume logic (continue below)
 
-2. **Check for System Upgrades**
+3. **Check for System Upgrades**
    - Check if status.md contains all available modules (0-7)
    - If Module 7 missing from status.md: System has been upgraded
    - Add missing modules to status.md with NOT_STARTED status
    - Notify user of system upgrade and new modules available
 
-3. **Read Status File (Fallback)**
+4. **Read Status File (Fallback)**
    - Try to open `../../project_working_files/status.md` file
    - If not found, check `../../project_working_files/archivebin/status.md` (archived after Module 6)
    - Identify current module status for each module (0-7)
@@ -142,27 +185,33 @@ Before resuming any module, verify:
 ```markdown
 ## MANDATORY RESUME PROCESS
 
-1. **Status Check**
-   - Read project_instructions/status.md
+1. **Infrastructure Validation (FIRST)**
+   - Check if archivebin/ directory exists, create if missing
+   - Check if .gitignore exists, create if missing
+   - Archive status.md if high_level_plan.md exists and status.md exists
+   - Apply all infrastructure upgrades before proceeding
+
+2. **Status Check**
+   - Read project_instructions/status.md (or archivebin/status.md if archived)
    - Identify current state of all modules
    - Note any IN_PROGRESS or NEEDS_VALIDATION modules
 
-2. **Validation**
+3. **Validation**
    - For each COMPLETED module, verify deliverables exist
    - Check file locations match expected paths
    - Validate content quality and completeness
 
-3. **Resume Point Determination**
+4. **Resume Point Determination**
    - Find first module that needs work
    - Verify prerequisites are met
    - If validation failed, restart from failed module
 
-4. **Resume Execution**
+5. **Resume Execution**
    - Start from determined resume point
    - Do NOT restart completed work
-   - Update status.md as work progresses
+   - Update status tracking as work progresses
 
-5. **Debug Logging** (if enabled)
+6. **Debug Logging** (if enabled)
    - Log resume decision process
    - Document validation results
    - Track what work was resumed vs. restarted
