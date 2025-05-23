@@ -45,6 +45,32 @@ Compare the modules in status.md against available modules:
 ### Step 4: Handle System Upgrade
 If upgrade detected, follow these steps:
 
+**SIMULATE MODE CHECK**: If simulate mode is enabled, create ../../simulate/simulate_log.md and log all operations that would be performed:
+
+```bash
+# Create simulate directory and log from template
+mkdir -p ../../simulate/
+cp ../templates/simulate_log_template.md ../../simulate/simulate_log.md
+
+# Log all operations that would be performed (example entries):
+echo "$(date '+%Y-%m-%d %H:%M:%S') | SIMULATE | CREATE | ../../archivebin/" >> ../../simulate/simulate_log.md
+echo "$(date '+%Y-%m-%d %H:%M:%S') | SIMULATE | CREATE | ../../project_working_files/issues/" >> ../../simulate/simulate_log.md
+echo "$(date '+%Y-%m-%d %H:%M:%S') | SIMULATE | COPY | current_issues_template.md → current_issues.md" >> ../../simulate/simulate_log.md
+echo "$(date '+%Y-%m-%d %H:%M:%S') | SIMULATE | COPY | current_workarounds_template.md → current_workarounds.md" >> ../../simulate/simulate_log.md
+echo "$(date '+%Y-%m-%d %H:%M:%S') | SIMULATE | CREATE | ../../.gitignore" >> ../../simulate/simulate_log.md
+echo "$(date '+%Y-%m-%d %H:%M:%S') | SIMULATE | MOVE | status.md → archivebin/status_[timestamp].md" >> ../../simulate/simulate_log.md
+echo "$(date '+%Y-%m-%d %H:%M:%S') | SIMULATE | EXECUTE | Module 7 (Implementation Tracking)" >> ../../simulate/simulate_log.md
+echo "$(date '+%Y-%m-%d %H:%M:%S') | SIMULATE | EXECUTE | Module 8 (Development Implementation)" >> ../../simulate/simulate_log.md
+
+# Maximum 1 API call for upgrade validation (if needed)
+echo "$(date '+%Y-%m-%d %H:%M:%S') | SIMULATE | RESEARCH | Context7: Latest module requirements" >> ../../simulate/simulate_log.md
+
+# Output completion message
+echo "Simulate mode: All upgrade operations logged to ../../simulate/simulate_log.md. No actual changes made."
+```
+
+**NORMAL EXECUTION**: If simulate mode is not enabled, proceed with actual upgrade:
+
 1. **Notify User**
    ```markdown
    🔄 SYSTEM UPGRADE DETECTED
@@ -124,6 +150,9 @@ If upgrade detected, follow these steps:
      cat > ../../.gitignore << 'EOF'
 # Project Instruction System (never commit)
 project_instructions/
+
+# Simulate mode logs (instruction system infrastructure)
+simulate/
 
 # Archive and temporary files
 archivebin/

@@ -216,6 +216,9 @@ Execute the following .gitignore creation steps:
 # Project Instruction System (never commit)
 project_instructions/
 
+# Simulate mode logs (instruction system infrastructure)
+simulate/
+
 # Archive and temporary files
 archivebin/
 *.tmp

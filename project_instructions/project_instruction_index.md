@@ -33,11 +33,23 @@
 - CLEAR SEPARATION: Complete isolation between instruction system and generated content
 - INPUT PROTECTION: project_plan.txt moved to project_input/ within project_instructions for safety
 
+**WORKING DIRECTORY ESTABLISHMENT REQUIREMENT**:
+- Agents MUST establish and log their current working directory (pwd) at the start of execution
+- This working directory context is CRITICAL for accurate relative path calculations
+- All file operations and command executions depend on this established working directory
+- Log the full path (e.g., `/home/user/ProjectA`) for reference throughout execution
+
 **DEBUG MODE REQUIREMENT**:
 - If the user provides "--debug" flag, agents MUST enable comprehensive debug logging
 - Debug mode captures all reasoning, decision-making, validation steps, and tool usage
 - Debug logs are written to "../../project_working_files/debug_log.md" file (relative to instruction modules) for troubleshooting and verification
 - Debug mode helps verify agents are following instructions and not using past knowledge
+
+**SIMULATE MODE REQUIREMENT**:
+- If the user provides "--simulate" flag, agents MUST enable simulation mode
+- Simulation mode logs all actions that would be performed without executing them
+- Simulation logs are written to "../../simulate/simulate_log.md" with full command paths
+- Simulation mode includes level detection (1-9) and switch processing for targeted testing
 
 ---
 
