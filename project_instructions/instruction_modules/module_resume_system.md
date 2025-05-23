@@ -33,7 +33,7 @@ When an agent starts work, they MUST:
    # Create archivebin if missing
    mkdir -p ../../archivebin/
 
-   # Create .gitignore if missing
+   # Create .gitignore if missing (MUST be at project root level)
    if [ ! -f ../../.gitignore ]; then
      cat > ../../.gitignore << 'EOF'
 # Project Instruction System (never commit)

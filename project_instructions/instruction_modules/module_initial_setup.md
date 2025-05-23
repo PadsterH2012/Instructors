@@ -46,8 +46,10 @@ Execute the following directory creation steps:
    - Create "../../project_working_files/docs/documentation/" for application documentation
 
 3. **Create Project .gitignore File**
-   - Create "../../.gitignore" file in the project root (one level up from project_working_files)
-   - This ensures the instruction system and temporary files are never committed to the project repository
+   - **CRITICAL**: Create "../../.gitignore" file in the project root directory (same level as project_instructions/ and project_working_files/)
+   - **Path Verification**: The .gitignore MUST be at the project root, NOT inside project_working_files/
+   - **Purpose**: This ensures the instruction system and temporary files are never committed to the project repository
+   - **Location Confirmation**: The file should be at the same directory level where you would run `git init`
    - Use the template provided below to include all necessary exclusions
 
 4. **Verify Isolated Directory Structure**
@@ -186,9 +188,19 @@ Execute the following system date capture steps:
 Execute the following .gitignore creation steps:
 
 1. **Create .gitignore File**
-   - Create ../../.gitignore file in the project root directory
-   - This prevents the instruction system and temporary files from being committed to the project repository
-   - Ensures clean project repository focused only on actual project code
+   - **MANDATORY LOCATION**: Create ../../.gitignore file in the project root directory
+   - **CRITICAL PATH VERIFICATION**: The .gitignore file MUST be created at the same level as project_instructions/ and project_working_files/ directories
+   - **WRONG LOCATION**: Do NOT create .gitignore inside project_working_files/ or project_instructions/
+   - **CORRECT STRUCTURE**: After creation, the directory structure should be:
+     ```
+     project_root/
+     ├── project_instructions/
+     ├── project_working_files/
+     ├── archivebin/
+     └── .gitignore              ← MUST be here at root level
+     ```
+   - **Purpose**: This prevents the instruction system and temporary files from being committed to the project repository
+   - **Git Integration**: Ensures clean project repository focused only on actual project code
 
 2. **.gitignore Template**
    Create the file with this exact content:
@@ -226,10 +238,12 @@ Thumbs.db
 ```
 
 3. **.gitignore Validation**
-   - Verify .gitignore file was created successfully
-   - Confirm project_instructions/ is excluded from version control
-   - Confirm archivebin/ is excluded from version control
-   - Test that the file is properly formatted
+   - **Location Verification**: Confirm .gitignore file exists at ../../.gitignore (project root level)
+   - **Path Validation**: Verify the file is NOT inside project_working_files/ or project_instructions/
+   - **Content Verification**: Confirm project_instructions/ is excluded from version control
+   - **Archive Verification**: Confirm archivebin/ is excluded from version control
+   - **Format Validation**: Test that the file is properly formatted and readable
+   - **Git Test**: If git is available, run `git status` to verify exclusions work correctly
 
 ### 0.5 Project Context Assessment
 
@@ -607,7 +621,8 @@ Before proceeding to Module 1, verify that all setup is complete:
 - [ ] "../../project_working_files/docs/" directory exists
 - [ ] "../../project_working_files/docs/documentation/" directory exists
 - [ ] "../../archivebin/" directory exists
-- [ ] "../../.gitignore" file exists in project root with proper exclusions
+- [ ] "../../.gitignore" file exists in project root (same level as project_instructions/ and project_working_files/) with proper exclusions
+- [ ] .gitignore file is NOT located inside project_working_files/ or project_instructions/ directories
 - [ ] "../../project_working_files/system_info.env" file exists with current date information
 - [ ] "../../project_working_files/project_context.md" file exists with user responses and implications
 - [ ] "../../project_working_files/status.md" file exists and contains the complete template

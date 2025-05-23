@@ -87,7 +87,7 @@ If upgrade detected, follow these steps:
 
    **3.2 .gitignore Setup**
    ```bash
-   # Create .gitignore if missing (Module 0 enhancement)
+   # Create .gitignore if missing (Module 0 enhancement - MUST be at project root level)
    if [ ! -f ../../.gitignore ]; then
      cat > ../../.gitignore << 'EOF'
 # Project Instruction System (never commit)

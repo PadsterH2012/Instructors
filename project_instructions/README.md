@@ -15,23 +15,26 @@ The **Isolated Project Instruction System** is a comprehensive, self-contained f
 ### Folder Structure
 
 ```
-parent_folder/
-├── project_instructions/           # 🔒 PROTECTED - Never modified during execution
-│   ├── instruction_modules/        # Core instruction modules (8 modules)
-│   ├── project_input/             # Protected input files
-│   │   └── project_plan.txt       # Project requirements and specifications
+project_root/                      # 🎯 PROJECT ROOT - Where you run git init
+├── .gitignore                     # 🚫 GIT EXCLUSIONS - Created by Module 0 at root level
+├── project_instructions/          # 🔒 PROTECTED - Never modified during execution
+│   ├── instruction_modules/       # Core instruction modules (8 modules)
+│   ├── project_input/            # Protected input files
+│   │   └── project_plan.txt      # Project requirements and specifications
 │   ├── project_instruction_index.md # Main instruction entry point
-│   ├── templates/                 # Documentation templates
-│   └── README.md                  # This user guide
-└── project_working_files/         # 🗑️ SAFE TO DELETE - All agent-generated content
-    ├── status.md                  # Status tracking and resume capability
-    ├── debug_log.md              # Debug logs (if --debug enabled)
-    ├── working_files/             # Internal working files
-    │   ├── research/              # Module 1 research outputs
-    │   ├── design/                # Module 3 LLD working files
-    │   └── tasks/                 # Task breakdown files
-    └── docs/                      # Final documentation outputs
-        └── documentation/         # Self-referencing documentation system
+│   ├── templates/                # Documentation templates
+│   └── README.md                 # This user guide
+├── project_working_files/        # 🗑️ SAFE TO DELETE - All agent-generated content
+│   ├── status.md                 # Status tracking and resume capability
+│   ├── debug_log.md             # Debug logs (if --debug enabled)
+│   ├── working_files/            # Internal working files
+│   │   ├── research/             # Module 1 research outputs
+│   │   ├── design/               # Module 3 LLD working files
+│   │   └── tasks/                # Task breakdown files
+│   └── docs/                     # Final documentation outputs
+│       └── documentation/        # Self-referencing documentation system
+└── archivebin/                   # 📦 ARCHIVE - Backup and archived files (same level as project_working_files)
+    └── status.md                 # Archived status (after Module 6)
 ```
 
 ## 🚀 Preparation
