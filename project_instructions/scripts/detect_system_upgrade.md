@@ -48,17 +48,21 @@ If upgrade detected, follow these steps:
    ```markdown
    🔄 SYSTEM UPGRADE DETECTED
 
-   The project instruction system has been upgraded with new modules:
+   The project instruction system has been upgraded with new modules and infrastructure:
    - Module 7: Implementation Tracking System
+   - Enhanced Module 0: Archive management and .gitignore setup
+   - Enhanced Module 6: Status file lifecycle management
 
-   I will add the new module to your status tracking and execute it to enhance your project with the latest capabilities.
+   I will upgrade your project infrastructure and execute new modules to enhance your project with the latest capabilities.
 
    This upgrade provides:
    - Structured implementation tracking with task-level progress
    - Enhanced progress visualization with STATUS_README dashboard
-   - Phase-based task breakdown for better project management
+   - Professional .gitignore setup for clean repositories
+   - Archive management with archivebin/ folder
+   - Improved file lifecycle management
 
-   Proceeding with Module 7 execution...
+   Proceeding with infrastructure validation and module execution...
    ```
 
 2. **Update Status File**
@@ -71,10 +75,69 @@ If upgrade detected, follow these steps:
    **Description**: Creates structured implementation tracking system with task-level progress monitoring and STATUS_README dashboard
    ```
 
-3. **Create Archive Directory (if missing)**
-   If the archivebin directory doesn't exist, create it:
+3. **Infrastructure Validation and Upgrade**
+   Validate and apply all infrastructure improvements from enhanced modules:
+
+   **3.1 Archive Directory Setup**
    ```bash
+   # Create archivebin if missing (Module 0 enhancement)
    mkdir -p ../../project_working_files/archivebin/
+   echo "✅ Archive directory created/verified"
+   ```
+
+   **3.2 .gitignore Setup**
+   ```bash
+   # Create .gitignore if missing (Module 0 enhancement)
+   if [ ! -f ../../.gitignore ]; then
+     cat > ../../.gitignore << 'EOF'
+# Project Instruction System (never commit)
+project_instructions/
+
+# Archive and temporary files
+project_working_files/archivebin/
+*.tmp
+*.bak
+*.backup
+
+# System and debug files (keep in working files but exclude from commits when no longer needed)
+# Uncomment these lines when files are no longer needed for development:
+# project_working_files/system_info.env
+# project_working_files/debug_log.md
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+EOF
+     echo "✅ .gitignore created with comprehensive exclusions"
+   else
+     echo "✅ .gitignore already exists"
+   fi
+   ```
+
+   **3.3 Status File Archiving (if Module 6 complete)**
+   ```bash
+   # Archive status.md if high_level_plan.md exists (Module 6 enhancement)
+   if [ -f ../../project_working_files/docs/high_level_plan.md ] && [ -f ../../project_working_files/status.md ]; then
+     # Create timestamped backup
+     cp ../../project_working_files/status.md ../../project_working_files/archivebin/status_$(date +%Y%m%d_%H%M%S).md
+     # Move to archive
+     mv ../../project_working_files/status.md ../../project_working_files/archivebin/status.md
+     echo "✅ Status file archived to archivebin/"
+   else
+     echo "✅ Status file archiving not needed (Module 6 not complete or already archived)"
+   fi
    ```
 
 4. **Verify Prerequisites**
@@ -86,7 +149,14 @@ If upgrade detected, follow these steps:
 ### Step 5: Validation
 After executing new modules, verify the upgrade was successful:
 
-- [ ] Module 7 added to status.md
+**Infrastructure Validation**:
+- [ ] ../../project_working_files/archivebin/ directory exists
+- [ ] ../../.gitignore file exists with project_instructions/ exclusion
+- [ ] If Module 6 complete: status.md archived to archivebin/
+- [ ] All infrastructure improvements applied
+
+**Module 7 Validation**:
+- [ ] Module 7 added to status.md (or archivebin/status.md)
 - [ ] Module 7 executed and marked COMPLETED
 - [ ] implementation_plan/ directory created
 - [ ] STATUS_README.md dashboard created
@@ -96,15 +166,27 @@ After executing new modules, verify the upgrade was successful:
 
 ### Scenario A: Project "Complete" but Module 7 Missing
 **Symptoms**: Agent says project is ready for implementation, but no implementation_plan/ directory exists
-**Solution**: Run this detection script, execute Module 7
+**Solution**: Run this detection script, apply infrastructure upgrades, execute Module 7
 
-### Scenario B: Old Project Resume
-**Symptoms**: Resuming work on a project created before Module 7 was available
-**Solution**: System will automatically detect and add Module 7
+### Scenario B: Old Project Resume (Your Current Situation)
+**Symptoms**:
+- Project created before recent infrastructure improvements
+- Missing archivebin/ directory
+- Missing .gitignore file
+- Status.md not archived despite Module 6 completion
+**Solution**:
+- Infrastructure validation will create missing archivebin/
+- .gitignore will be created with comprehensive exclusions
+- Status.md will be archived if Module 6 is complete
+- Module 7 will be added and executed
 
-### Scenario C: Partial Upgrade
-**Symptoms**: Some new modules present, others missing
-**Solution**: Add all missing modules in sequence, execute in order
+### Scenario C: Partial Infrastructure Upgrade
+**Symptoms**: Some infrastructure present, others missing (e.g., has archivebin/ but no .gitignore)
+**Solution**: Infrastructure validation checks each component individually and applies only what's missing
+
+### Scenario D: Multiple Missing Modules
+**Symptoms**: Multiple modules missing from status tracking
+**Solution**: Add all missing modules in sequence, apply all infrastructure improvements, execute in order
 
 ## Agent Instructions
 
