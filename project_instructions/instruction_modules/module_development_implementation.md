@@ -52,6 +52,8 @@
 
 ### 8.1 Project Foundation Setup
 
+**MANDATORY PHASE REMINDER**: Before starting this phase, read project_instructions/project_identity_reminder.md to refresh project context, Docker-native requirements, and quality standards.
+
 Execute the following project structure creation steps:
 
 1. **Read Project Identity and Context**
@@ -71,13 +73,22 @@ Execute the following project structure creation steps:
    - Establish clear separation between testing and application scripts
    - Document script organization rationale in implementation notes
 
-4. **Documentation Integration**
+4. **Git Repository Initialization (CRITICAL)**
+   - **MANDATORY**: Navigate to project root level (same directory as project_instructions/)
+   - **VERIFY**: .gitignore file exists at current directory level
+   - **INITIALIZE**: Run `git init` at project root level (NOT inside [project_name]/)
+   - **VALIDATE**: Run `git status` to verify project_instructions/ is ignored
+   - **FORBIDDEN**: Never initialize git inside the [project_name]/ directory
+
+5. **Documentation Integration**
    - Add implementation startup notes to existing docs/implementation_notes.md
    - Update high_level_plan.md with Module 8 implementation progress
    - Reference specific LLD sections being implemented
    - Maintain project identity throughout documentation updates
 
 ### 8.2 Environment and Configuration Implementation
+
+**MANDATORY PHASE REMINDER**: Before starting this phase, read project_instructions/project_identity_reminder.md to ensure Docker-native development and no system installations.
 
 Execute the following Docker environment setup steps:
 
@@ -109,6 +120,8 @@ Execute the following Docker environment setup steps:
 
 ### 8.3 Database Implementation
 
+**MANDATORY PHASE REMINDER**: Before starting this phase, read project_instructions/project_identity_reminder.md to maintain project context and follow LLD specifications.
+
 Execute the following database implementation steps:
 
 1. **Schema Implementation**
@@ -138,6 +151,8 @@ Execute the following database implementation steps:
    - Add findings to working_files/research/database_optimization.md
 
 ### 8.4 Core Application Development
+
+**MANDATORY PHASE REMINDER**: Before starting this phase, read project_instructions/project_identity_reminder.md to ensure proper architecture implementation and script organization.
 
 Execute the following application development steps:
 
@@ -169,6 +184,8 @@ Execute the following application development steps:
 
 ### 8.5 UI/Frontend Implementation
 
+**MANDATORY PHASE REMINDER**: Before starting this phase, read project_instructions/project_identity_reminder.md to maintain project identity and follow UI/UX LLD specifications.
+
 Execute the following frontend implementation steps:
 
 1. **Frontend Structure Creation**
@@ -198,6 +215,8 @@ Execute the following frontend implementation steps:
    - Add new findings to working_files/research/frontend_optimization.md
 
 ### 8.6 Quality Assurance and Validation
+
+**MANDATORY PHASE REMINDER**: Before starting this phase, read project_instructions/project_identity_reminder.md to ensure no testing workarounds and proper Docker-based testing.
 
 Execute the following comprehensive testing and validation steps:
 
@@ -265,6 +284,13 @@ Before marking Module 8 as COMPLETED, verify:
 - [ ] `../../[project_name]/scripts/` contains application lifecycle scripts
 - [ ] `../../project_working_files/scripts/` contains testing scripts
 - [ ] All scripts have documented purposes and clear location rationale
+
+**Git Repository Location Validation**:
+- [ ] Git repository (.git/) is at project root level (same directory as project_instructions/)
+- [ ] .gitignore file exists at same level as .git directory
+- [ ] Git status shows project_instructions/ and archivebin/ are ignored (not in untracked files)
+- [ ] NO .git directory exists inside `../../[project_name]/` folder
+- [ ] Git repository structure is professional and correct
 
 **Implementation Validation**:
 - [ ] Database implementation matches working_files/design/database_lld.md specifications
