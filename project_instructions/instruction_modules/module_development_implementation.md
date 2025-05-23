@@ -119,7 +119,21 @@ Execute the following Docker environment setup steps:
      - `start_services.sh` - Application startup script
      - `deploy.sh` - Deployment script per DevOps LLD
 
-4. **Research Integration Point**
+4. **Test Execution and Validation**
+   - **MANDATORY**: Execute all validation scripts created in step 3
+   - **RUN**: `../../project_working_files/scripts/validate_environment.sh`
+   - **RUN**: `../../project_working_files/scripts/test_docker_setup.sh`
+   - **RUN**: `../../project_working_files/scripts/validate_config.sh`
+   - **REQUIREMENT**: All tests MUST pass before proceeding to next phase
+   - **NO WORKAROUNDS**: If tests fail, fix the configuration, don't bypass tests
+
+5. **Issue Tracking and Resolution**
+   - **REVIEW**: Check ../../project_working_files/issues/current_issues.md for any open issues
+   - **LOG NEW ISSUES**: If any problems discovered during this phase, log them immediately
+   - **RESOLVE WHEN POSSIBLE**: Address any HIGH priority issues before proceeding
+   - **UPDATE STATUS**: Update issue status and resolution progress
+
+6. **Research Integration Point**
    - If Docker optimization questions arise, use brave_web_search with current date context
    - Reference existing Module 1 research first before new searches
    - Add any new research to working_files/research/docker_optimization.md
@@ -151,7 +165,21 @@ Execute the following database implementation steps:
      - `migrate_database.sh` - Database migration execution script
      - `backup_database.sh` - Database backup script
 
-4. **Research Integration Point**
+4. **Test Execution and Validation**
+   - **MANDATORY**: Execute all database testing scripts created in step 3
+   - **RUN**: `../../project_working_files/scripts/test_database.sh`
+   - **RUN**: `../../project_working_files/scripts/validate_schema.sh`
+   - **RUN**: `../../project_working_files/scripts/test_data_integrity.sh`
+   - **REQUIREMENT**: All database tests MUST pass before proceeding to next phase
+   - **NO WORKAROUNDS**: If tests fail, fix the database implementation, don't bypass tests
+
+5. **Issue Tracking and Resolution**
+   - **REVIEW**: Check ../../project_working_files/issues/current_issues.md for any open issues
+   - **LOG NEW ISSUES**: If any database problems discovered during this phase, log them immediately
+   - **RESOLVE WHEN POSSIBLE**: Address any HIGH priority database issues before proceeding
+   - **UPDATE STATUS**: Update issue status and resolution progress
+
+6. **Research Integration Point**
    - If database optimization questions arise, use Context7 tools for current best practices
    - Reference system_info.env date context for current year database practices
    - Add findings to working_files/research/database_optimization.md
@@ -183,7 +211,15 @@ Execute the following application development steps:
      - `run_app.sh` - Application runner script
      - `health_check.sh` - Application health monitoring script
 
-4. **Research Integration Point**
+4. **Test Execution and Validation**
+   - **MANDATORY**: Execute all component testing scripts created in step 3
+   - **RUN**: `../../project_working_files/scripts/test_components.sh`
+   - **RUN**: `../../project_working_files/scripts/test_api_endpoints.sh`
+   - **RUN**: `../../project_working_files/scripts/test_business_logic.sh`
+   - **REQUIREMENT**: All component tests MUST pass before proceeding to next phase
+   - **NO WORKAROUNDS**: If tests fail, fix the application code, don't bypass tests
+
+5. **Research Integration Point**
    - If implementation pattern questions arise, use Context7 for current best practices
    - Reference existing Module 1 research for technology-specific patterns
    - Add new findings to working_files/research/implementation_patterns.md
@@ -215,7 +251,15 @@ Execute the following frontend implementation steps:
      - `build_frontend.sh` - Frontend build script
      - `serve_frontend.sh` - Frontend serving script
 
-4. **Research Integration Point**
+4. **Test Execution and Validation**
+   - **MANDATORY**: Execute all frontend testing scripts created in step 3
+   - **RUN**: `../../project_working_files/scripts/test_ui_components.sh`
+   - **RUN**: `../../project_working_files/scripts/test_user_flows.sh`
+   - **RUN**: `../../project_working_files/scripts/test_responsive_design.sh`
+   - **REQUIREMENT**: All frontend tests MUST pass before proceeding to next phase
+   - **NO WORKAROUNDS**: If tests fail, fix the frontend implementation, don't bypass tests
+
+5. **Research Integration Point**
    - If UI framework questions arise, use brave_web_search with current date context
    - Reference Module 1 frontend technology research
    - Add new findings to working_files/research/frontend_optimization.md
@@ -247,7 +291,15 @@ Execute the following comprehensive testing and validation steps:
      - `ci_pipeline.sh` - CI/CD pipeline script per DevOps LLD
      - `production_deploy.sh` - Production deployment script
 
-4. **Documentation Completion**
+4. **Comprehensive Test Execution (MANDATORY)**
+   - **EXECUTE MASTER TEST SUITE**: Run `../../project_working_files/scripts/run_all_tests.sh`
+   - **VALIDATE IMPLEMENTATION**: Run `../../project_working_files/scripts/validate_implementation.sh`
+   - **GENERATE REPORTS**: Run `../../project_working_files/scripts/generate_test_reports.sh`
+   - **REQUIREMENT**: ALL tests must pass before Module 8 can be marked complete
+   - **NO EXCEPTIONS**: If any test fails, fix the implementation, don't bypass or ignore
+   - **DOCKER REQUIREMENT**: All test execution must occur within Docker containers
+
+5. **Documentation Completion**
    - Update ALL existing documentation with implementation details
    - Create deployment documentation in docs/deployment_guide.md
    - Update STATUS_README.md with final Module 8 progress
@@ -319,6 +371,23 @@ Before marking Module 8 as COMPLETED, verify:
 - [ ] Project identity maintained throughout implementation
 - [ ] LLD traceability documented for all implementation decisions
 - [ ] STATUS_README.md updated with Module 8 completion
+
+**Test Execution Validation**:
+- [ ] Environment validation tests executed and passed (Phase 8.2)
+- [ ] Database tests executed and passed (Phase 8.3)
+- [ ] Component tests executed and passed (Phase 8.4)
+- [ ] Frontend tests executed and passed (Phase 8.5)
+- [ ] Master test suite executed and ALL tests passed (Phase 8.6)
+- [ ] Implementation validation script executed and passed
+- [ ] Test reports generated and reviewed
+- [ ] NO test failures ignored or bypassed
+
+**Issue Tracking Validation**:
+- [ ] All issues discovered during implementation have been logged in current_issues.md
+- [ ] HIGH priority issues have been resolved or have clear resolution plans
+- [ ] Any workarounds implemented have been logged in current_workarounds.md
+- [ ] Issue tracking files are up-to-date with current status
+- [ ] No untracked issues or workarounds exist
 
 **Quality Validation**:
 - [ ] All tests pass within Docker environment

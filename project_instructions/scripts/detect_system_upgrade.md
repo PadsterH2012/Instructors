@@ -62,6 +62,7 @@ If upgrade detected, follow these steps:
    - Enhanced progress visualization with STATUS_README dashboard
    - Complete development implementation using LLD specifications
    - Docker-native development with proper script organization
+   - Active issue and workaround tracking system
    - Professional .gitignore setup for clean repositories
    - Archive management with archivebin/ folder
    - Improved file lifecycle management
@@ -95,7 +96,28 @@ If upgrade detected, follow these steps:
    echo "✅ Archive directory created/verified"
    ```
 
-   **3.2 .gitignore Setup**
+   **3.2 Issue Tracking System Setup**
+   ```bash
+   # Create issues directory if missing (Module 0 enhancement)
+   mkdir -p ../../project_working_files/issues/
+
+   # Create issue tracking files if missing
+   if [ ! -f ../../project_working_files/issues/current_issues.md ]; then
+     cp ../templates/current_issues_template.md ../../project_working_files/issues/current_issues.md
+     echo "✅ Current issues tracking file created"
+   else
+     echo "✅ Current issues tracking file already exists"
+   fi
+
+   if [ ! -f ../../project_working_files/issues/current_workarounds.md ]; then
+     cp ../templates/current_workarounds_template.md ../../project_working_files/issues/current_workarounds.md
+     echo "✅ Current workarounds tracking file created"
+   else
+     echo "✅ Current workarounds tracking file already exists"
+   fi
+   ```
+
+   **3.3 .gitignore Setup**
    ```bash
    # Create .gitignore if missing (Module 0 enhancement - MUST be at project root level)
    if [ ! -f ../../.gitignore ]; then
@@ -136,7 +158,7 @@ EOF
    fi
    ```
 
-   **3.3 Status File Archiving (if Module 6 complete)**
+   **3.4 Status File Archiving (if Module 6 complete)**
    ```bash
    # Archive status.md if high_level_plan.md exists (Module 6 enhancement)
    if [ -f ../../project_working_files/docs/high_level_plan.md ] && [ -f ../../project_working_files/status.md ]; then
@@ -164,6 +186,9 @@ After executing new modules, verify the upgrade was successful:
 
 **Infrastructure Validation**:
 - [ ] ../../archivebin/ directory exists
+- [ ] ../../project_working_files/issues/ directory exists
+- [ ] ../../project_working_files/issues/current_issues.md file exists
+- [ ] ../../project_working_files/issues/current_workarounds.md file exists
 - [ ] ../../.gitignore file exists with project_instructions/ exclusion
 - [ ] If Module 6 complete: status.md archived to archivebin/
 - [ ] All infrastructure improvements applied

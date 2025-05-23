@@ -39,6 +39,7 @@ Execute the following directory creation steps:
    - Create "../../project_working_files/working_files/research/" for Module 1 outputs
    - Create "../../project_working_files/working_files/design/" for Module 3 working files
    - Create "../../project_working_files/working_files/tasks/" for task breakdown files
+   - Create "../../project_working_files/issues/" for active issue tracking
    - Create "../../archivebin/" for archived and backup files
 
 2. **Create Final Documentation Structure**
@@ -52,9 +53,15 @@ Execute the following directory creation steps:
    - **Location Confirmation**: The file should be at the same directory level where you would run `git init`
    - Use the template provided below to include all necessary exclusions
 
-4. **Verify Isolated Directory Structure**
+4. **Create Issue Tracking Files**
+   - Copy issue tracking templates from project_instructions/templates/ to ../../project_working_files/issues/
+   - Create ../../project_working_files/issues/current_issues.md from current_issues_template.md
+   - Create ../../project_working_files/issues/current_workarounds.md from current_workarounds_template.md
+   - Initialize both files with empty active sections (no issues or workarounds initially)
+
+5. **Verify Isolated Directory Structure**
    - Confirm ../../project_working_files/ structure exists completely separate from project_instructions/
-   - Confirm all subdirectories are created properly
+   - Confirm all subdirectories are created properly including issues/
    - Verify project_instructions/ folder remains untouched
    - Document any issues with directory creation
 
