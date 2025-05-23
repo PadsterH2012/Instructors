@@ -1,0 +1,13 @@
+i would like a docker container that will run an application that will allow audio communication between 2 users, it can be either push talk to open. there should also have a messaging system built in as well. to allow text to be sent between users as well.
+it should have an audio bell/notification when a new message comes in, and a ringing sound when trying to initiate an audio connection.
+
+this will be primarily used from a windows device, it should be secure and encrypted.
+i want the interface to be simple and easy for my 7 year old daughter to speak to me whilst playing minecraft
+
+maybe it should have a minecraft theme
+other features would be webcam support
+emotes as well
+server backend will run in a docker container
+there is no budget, its a solo agent dev
+full features.
+it must look stunning and professional
