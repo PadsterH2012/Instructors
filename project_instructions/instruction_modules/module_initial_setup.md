@@ -39,7 +39,7 @@ Execute the following directory creation steps:
    - Create "../../project_working_files/working_files/research/" for Module 1 outputs
    - Create "../../project_working_files/working_files/design/" for Module 3 working files
    - Create "../../project_working_files/working_files/tasks/" for task breakdown files
-   - Create "../../project_working_files/archivebin/" for archived and backup files
+   - Create "../../archivebin/" for archived and backup files
 
 2. **Create Final Documentation Structure**
    - Create "../../project_working_files/docs/" folder for final documentation deliverables
@@ -198,7 +198,7 @@ Execute the following .gitignore creation steps:
 project_instructions/
 
 # Archive and temporary files
-project_working_files/archivebin/
+archivebin/
 *.tmp
 *.bak
 *.backup
@@ -606,7 +606,7 @@ Before proceeding to Module 1, verify that all setup is complete:
 - [ ] "../../project_working_files/working_files/tasks/" directory exists
 - [ ] "../../project_working_files/docs/" directory exists
 - [ ] "../../project_working_files/docs/documentation/" directory exists
-- [ ] "../../project_working_files/archivebin/" directory exists
+- [ ] "../../archivebin/" directory exists
 - [ ] "../../.gitignore" file exists in project root with proper exclusions
 - [ ] "../../project_working_files/system_info.env" file exists with current date information
 - [ ] "../../project_working_files/project_context.md" file exists with user responses and implications
@@ -628,7 +628,7 @@ Before proceeding to Module 1, verify that all setup is complete:
 - ../../project_working_files/status.md (unified status and task tracking)
 - ../../project_working_files/working_files/ directory structure
 - ../../project_working_files/docs/ directory (final documentation)
-- ../../project_working_files/archivebin/ directory (archived and backup files)
+- ../../archivebin/ directory (archived and backup files)
 - ../../project_working_files/debug_log.md (if debug mode enabled)
 
 ## Next Module

@@ -81,7 +81,7 @@ If upgrade detected, follow these steps:
    **3.1 Archive Directory Setup**
    ```bash
    # Create archivebin if missing (Module 0 enhancement)
-   mkdir -p ../../project_working_files/archivebin/
+   mkdir -p ../../archivebin/
    echo "✅ Archive directory created/verified"
    ```
 
@@ -94,7 +94,7 @@ If upgrade detected, follow these steps:
 project_instructions/
 
 # Archive and temporary files
-project_working_files/archivebin/
+archivebin/
 *.tmp
 *.bak
 *.backup
@@ -131,9 +131,9 @@ EOF
    # Archive status.md if high_level_plan.md exists (Module 6 enhancement)
    if [ -f ../../project_working_files/docs/high_level_plan.md ] && [ -f ../../project_working_files/status.md ]; then
      # Create timestamped backup
-     cp ../../project_working_files/status.md ../../project_working_files/archivebin/status_$(date +%Y%m%d_%H%M%S).md
+     cp ../../project_working_files/status.md ../../archivebin/status_$(date +%Y%m%d_%H%M%S).md
      # Move to archive
-     mv ../../project_working_files/status.md ../../project_working_files/archivebin/status.md
+     mv ../../project_working_files/status.md ../../archivebin/status.md
      echo "✅ Status file archived to archivebin/"
    else
      echo "✅ Status file archiving not needed (Module 6 not complete or already archived)"
@@ -150,7 +150,7 @@ EOF
 After executing new modules, verify the upgrade was successful:
 
 **Infrastructure Validation**:
-- [ ] ../../project_working_files/archivebin/ directory exists
+- [ ] ../../archivebin/ directory exists
 - [ ] ../../.gitignore file exists with project_instructions/ exclusion
 - [ ] If Module 6 complete: status.md archived to archivebin/
 - [ ] All infrastructure improvements applied
@@ -175,7 +175,7 @@ After executing new modules, verify the upgrade was successful:
 - Missing .gitignore file
 - Status.md not archived despite Module 6 completion
 **Solution**:
-- Infrastructure validation will create missing archivebin/
+- Infrastructure validation will create missing ../../archivebin/
 - .gitignore will be created with comprehensive exclusions
 - Status.md will be archived if Module 6 is complete
 - Module 7 will be added and executed

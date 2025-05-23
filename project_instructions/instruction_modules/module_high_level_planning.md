@@ -324,10 +324,10 @@ Execute the following status archiving steps:
 2. **Archiving Process**
    ```bash
    # Create archive with timestamp
-   cp ../../project_working_files/status.md ../../project_working_files/archivebin/status_$(date +%Y%m%d_%H%M%S).md
+   cp ../../project_working_files/status.md ../../archivebin/status_$(date +%Y%m%d_%H%M%S).md
 
    # Move original to archive
-   mv ../../project_working_files/status.md ../../project_working_files/archivebin/status.md
+   mv ../../project_working_files/status.md ../../archivebin/status.md
    ```
 
 3. **Archive Validation**
@@ -336,7 +336,7 @@ Execute the following status archiving steps:
    - Ensure resume system can still access archived status if needed
 
 4. **Update Resume System Priority**
-   - Resume system now prioritizes: implementation_plan/ → high_level_plan.md → archivebin/status.md
+   - Resume system now prioritizes: implementation_plan/ → high_level_plan.md → ../../archivebin/status.md
    - This ensures clean project structure while maintaining backward compatibility
 
 **DEBUG LOGGING REQUIREMENT**: If debug mode enabled, update ../../project_working_files/debug_log.md with:

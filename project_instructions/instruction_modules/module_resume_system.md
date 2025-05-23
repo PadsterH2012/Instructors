@@ -23,7 +23,7 @@
 When an agent starts work, they MUST:
 
 1. **Infrastructure Validation (MANDATORY FIRST STEP)**
-   - Check if `../../project_working_files/archivebin/` directory exists
+   - Check if `../../archivebin/` directory exists
    - Check if `../../.gitignore` file exists with project_instructions/ exclusion
    - If infrastructure missing: Apply infrastructure upgrades before proceeding
    - This ensures all projects have modern infrastructure regardless of creation date
@@ -31,7 +31,7 @@ When an agent starts work, they MUST:
    **Infrastructure Upgrade Process (if needed)**:
    ```bash
    # Create archivebin if missing
-   mkdir -p ../../project_working_files/archivebin/
+   mkdir -p ../../archivebin/
 
    # Create .gitignore if missing
    if [ ! -f ../../.gitignore ]; then
@@ -40,7 +40,7 @@ When an agent starts work, they MUST:
 project_instructions/
 
 # Archive and temporary files
-project_working_files/archivebin/
+archivebin/
 *.tmp
 *.bak
 *.backup
@@ -60,8 +60,8 @@ EOF
 
    # Archive status.md if high_level_plan.md exists and status.md exists
    if [ -f ../../project_working_files/docs/high_level_plan.md ] && [ -f ../../project_working_files/status.md ]; then
-     cp ../../project_working_files/status.md ../../project_working_files/archivebin/status_$(date +%Y%m%d_%H%M%S).md
-     mv ../../project_working_files/status.md ../../project_working_files/archivebin/status.md
+     cp ../../project_working_files/status.md ../../archivebin/status_$(date +%Y%m%d_%H%M%S).md
+     mv ../../project_working_files/status.md ../../archivebin/status.md
    fi
    ```
 
@@ -78,7 +78,7 @@ EOF
 
 4. **Read Status File (Fallback)**
    - Try to open `../../project_working_files/status.md` file
-   - If not found, check `../../project_working_files/archivebin/status.md` (archived after Module 6)
+   - If not found, check `../../archivebin/status.md` (archived after Module 6)
    - Identify current module status for each module (0-7)
    - Note any IN_PROGRESS modules
 
@@ -352,7 +352,7 @@ Use status.md resume logic when:
 - Plan format is invalid or incomplete
 - User explicitly requests status.md-based resume
 
-**Note**: After Module 6 completion, status.md is archived to archivebin/. The resume system will automatically check the archived location if the main status.md file is not found.
+**Note**: After Module 6 completion, status.md is archived to ../../archivebin/. The resume system will automatically check the archived location if the main status.md file is not found.
 
 ## System Upgrade Detection and Handling
 
