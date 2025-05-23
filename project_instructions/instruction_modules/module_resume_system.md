@@ -34,16 +34,17 @@ When an agent starts work, they MUST:
    - Notify user of system upgrade and new modules available
 
 3. **Read Status File (Fallback)**
-   - Open `../../project_working_files/status.md` file
+   - Try to open `../../project_working_files/status.md` file
+   - If not found, check `../../project_working_files/archivebin/status.md` (archived after Module 6)
    - Identify current module status for each module (0-7)
    - Note any IN_PROGRESS modules
 
-3. **Validate Completed Modules**
+4. **Validate Completed Modules**
    - For each module marked COMPLETED, verify deliverables exist
    - Check file locations and content quality
    - If validation fails, mark module as NEEDS_VALIDATION
 
-4. **Determine Starting Point**
+5. **Determine Starting Point**
    - Find first module that is NOT_STARTED or IN_PROGRESS
    - Verify all prerequisite modules are COMPLETED
    - If prerequisites missing, start from earliest incomplete prerequisite
@@ -301,6 +302,8 @@ Use status.md resume logic when:
 - Plan file is corrupted or unreadable
 - Plan format is invalid or incomplete
 - User explicitly requests status.md-based resume
+
+**Note**: After Module 6 completion, status.md is archived to archivebin/. The resume system will automatically check the archived location if the main status.md file is not found.
 
 ## System Upgrade Detection and Handling
 

@@ -39,12 +39,18 @@ Execute the following directory creation steps:
    - Create "../../project_working_files/working_files/research/" for Module 1 outputs
    - Create "../../project_working_files/working_files/design/" for Module 3 working files
    - Create "../../project_working_files/working_files/tasks/" for task breakdown files
+   - Create "../../project_working_files/archivebin/" for archived and backup files
 
 2. **Create Final Documentation Structure**
    - Create "../../project_working_files/docs/" folder for final documentation deliverables
    - Create "../../project_working_files/docs/documentation/" for application documentation
 
-3. **Verify Isolated Directory Structure**
+3. **Create Project .gitignore File**
+   - Create "../../.gitignore" file in the project root (one level up from project_working_files)
+   - This ensures the instruction system and temporary files are never committed to the project repository
+   - Use the template provided below to include all necessary exclusions
+
+4. **Verify Isolated Directory Structure**
    - Confirm ../../project_working_files/ structure exists completely separate from project_instructions/
    - Confirm all subdirectories are created properly
    - Verify project_instructions/ folder remains untouched
@@ -175,7 +181,57 @@ Execute the following system date capture steps:
   RESEARCH_CONTEXT=Focus on information from 2024 and late 2023
   ```
 
-### 0.4 Project Context Assessment
+### 0.4 Project .gitignore Creation
+
+Execute the following .gitignore creation steps:
+
+1. **Create .gitignore File**
+   - Create ../../.gitignore file in the project root directory
+   - This prevents the instruction system and temporary files from being committed to the project repository
+   - Ensures clean project repository focused only on actual project code
+
+2. **.gitignore Template**
+   Create the file with this exact content:
+
+```gitignore
+# Project Instruction System (never commit)
+project_instructions/
+
+# Archive and temporary files
+project_working_files/archivebin/
+*.tmp
+*.bak
+*.backup
+
+# System and debug files (keep in working files but exclude from commits when no longer needed)
+# Uncomment these lines when files are no longer needed for development:
+# project_working_files/system_info.env
+# project_working_files/debug_log.md
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+```
+
+3. **.gitignore Validation**
+   - Verify .gitignore file was created successfully
+   - Confirm project_instructions/ is excluded from version control
+   - Confirm archivebin/ is excluded from version control
+   - Test that the file is properly formatted
+
+### 0.5 Project Context Assessment
 
 Execute the following interactive context gathering steps:
 
@@ -374,7 +430,7 @@ After gathering all responses, create comprehensive project context documentatio
 Before proceeding, confirm with user:
 "Based on your responses, I understand this is a [summary of context]. This will guide all subsequent research and design decisions. Does this accurately capture your vision? (Y/N/Clarify)"
 
-### 0.5 Status Tracking File Creation
+### 0.6 Status Tracking File Creation
 
 Execute the following status file creation steps:
 
@@ -550,6 +606,8 @@ Before proceeding to Module 1, verify that all setup is complete:
 - [ ] "../../project_working_files/working_files/tasks/" directory exists
 - [ ] "../../project_working_files/docs/" directory exists
 - [ ] "../../project_working_files/docs/documentation/" directory exists
+- [ ] "../../project_working_files/archivebin/" directory exists
+- [ ] "../../.gitignore" file exists in project root with proper exclusions
 - [ ] "../../project_working_files/system_info.env" file exists with current date information
 - [ ] "../../project_working_files/project_context.md" file exists with user responses and implications
 - [ ] "../../project_working_files/status.md" file exists and contains the complete template
@@ -564,11 +622,13 @@ Before proceeding to Module 1, verify that all setup is complete:
 **STATUS UPDATE REQUIREMENT**: Update ../../project_working_files/status.md to COMPLETED status with timestamp and completion summary before proceeding to Module 1.
 
 ## Output Files
+- ../../.gitignore (project repository exclusions)
 - ../../project_working_files/system_info.env (current date context for research)
 - ../../project_working_files/project_context.md (user responses and architecture guidance)
 - ../../project_working_files/status.md (unified status and task tracking)
 - ../../project_working_files/working_files/ directory structure
 - ../../project_working_files/docs/ directory (final documentation)
+- ../../project_working_files/archivebin/ directory (archived and backup files)
 - ../../project_working_files/debug_log.md (if debug mode enabled)
 
 ## Next Module

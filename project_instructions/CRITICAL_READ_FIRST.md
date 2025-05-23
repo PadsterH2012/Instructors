@@ -12,7 +12,7 @@
 
 ### Rule 1: Tool Input Size Limits (MANDATORY)
 - **save-file**: Maximum 300 lines per operation
-- **str-replace-editor**: Maximum 200 lines per operation  
+- **str-replace-editor**: Maximum 200 lines per operation
 - **view**: Use view_range for files >100 lines (e.g., [1, 100], [101, 200])
 - **Never process entire LLD files at once**
 
@@ -52,7 +52,7 @@
 
 ## FRAMEWORK LOCATION
 
-**Enhanced Micro-Task Framework V2**: 
+**Enhanced Micro-Task Framework V2**:
 `../../project_working_files/working_files/tasks/micro_task_framework_v2.md`
 
 **MANDATORY**: Read this framework before executing any tasks.
@@ -144,3 +144,34 @@ Before proceeding with any module execution, agents MUST:
 **FAILURE TO FOLLOW THESE RULES WILL RESULT IN CONTINUED "TOOL INPUT TOO LARGE" ERRORS**
 
 This framework update should resolve the persistent size errors and enable successful project instruction system execution.
+
+## 🔄 SYSTEM UPGRADE DETECTION
+
+### When to Check for System Upgrades
+
+If you encounter any of these situations:
+- Agent claims project is "complete" but you expect more capabilities
+- Working on a project created before recent system updates
+- Missing expected modules or features
+- Agent suggests starting implementation without full instruction system completion
+
+### Upgrade Detection Process
+
+**IMMEDIATE ACTION**: Read and execute `scripts/detect_system_upgrade.md`
+
+This script will:
+- ✅ **Detect** missing modules automatically
+- ✅ **Add** new modules to status tracking
+- ✅ **Execute** missing modules in correct sequence
+- ✅ **Preserve** all existing work and progress
+- ✅ **Enhance** project with latest capabilities
+
+### System Upgrade Benefits
+
+Recent upgrades include:
+- **Module 7**: Implementation Tracking System with task-level progress
+- **Enhanced Resume System**: Better project continuation capabilities
+- **Archive Management**: Clean file organization with archivebin/
+- **Git Integration**: Automatic .gitignore setup for clean repositories
+
+**ALWAYS CHECK FOR UPGRADES** when resuming work on existing projects to ensure you have the latest instruction system capabilities.

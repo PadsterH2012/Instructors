@@ -64,10 +64,10 @@ Execute the following project planning steps:
 1. **Project Plan Creation**
    - Create project_plan.md (in the same directory as instruction.md) based on project_scope.md
    - Break down implementation into manageable subtasks (following the same approach as documentation subtasks)
-   - Include timelines, dependencies, and resource requirements
+   - Include dependencies and resource requirements
 
 2. **Project Plan Requirements**
-   - Ensure all tasks are specific, measurable, achievable, relevant, and time-bound
+   - Ensure all tasks are specific, measurable, achievable, and relevant
    - Define clear milestones and success criteria
    - Include risk assessment and mitigation strategies
    - Reference the documentation subtask management approach for consistency

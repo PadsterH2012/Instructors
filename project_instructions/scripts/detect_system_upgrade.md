@@ -47,17 +47,17 @@ If upgrade detected, follow these steps:
 1. **Notify User**
    ```markdown
    🔄 SYSTEM UPGRADE DETECTED
-   
+
    The project instruction system has been upgraded with new modules:
    - Module 7: Implementation Tracking System
-   
+
    I will add the new module to your status tracking and execute it to enhance your project with the latest capabilities.
-   
+
    This upgrade provides:
    - Structured implementation tracking with task-level progress
    - Enhanced progress visualization with STATUS_README dashboard
    - Phase-based task breakdown for better project management
-   
+
    Proceeding with Module 7 execution...
    ```
 
@@ -71,10 +71,16 @@ If upgrade detected, follow these steps:
    **Description**: Creates structured implementation tracking system with task-level progress monitoring and STATUS_README dashboard
    ```
 
-3. **Verify Prerequisites**
+3. **Create Archive Directory (if missing)**
+   If the archivebin directory doesn't exist, create it:
+   ```bash
+   mkdir -p ../../project_working_files/archivebin/
+   ```
+
+4. **Verify Prerequisites**
    Ensure Module 6 is COMPLETED before proceeding with Module 7
 
-4. **Execute Module 7**
+5. **Execute Module 7**
    Follow the instructions in module_implementation_tracking.md
 
 ### Step 5: Validation

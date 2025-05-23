@@ -93,7 +93,7 @@ Execute the following master index creation steps:
 
 3. **Progress Visualization Implementation**
    - Use table format for clear progress display
-   - Include status icons, progress bars, task counts, and ETA estimates
+   - Include status icons, progress bars, and task counts
    - Calculate progress as (completed tasks / total tasks) × 100%
    - Update automatically when task statuses change
    - Provide comprehensive status information in organized format
@@ -119,7 +119,7 @@ Execute the following task breakdown steps:
    - Progress tracking and update instructions
 
 3. **Task Breakdown Principles**
-   - Each task should be completable in 1-4 hours
+   - Each task should be focused and well-defined
    - Tasks must have clear completion criteria
    - Include both implementation and validation steps
    - Reference specific LLD sections and requirements
@@ -147,16 +147,16 @@ Execute the following dashboard creation steps:
 3. **Progress Table Format**
    Use table format for all progress displays:
    ```markdown
-   | Phase | Status | Progress | Tasks | ETA |
-   |-------|--------|----------|-------|-----|
-   | 1 | ✅ Complete | ████████████ 100% | 15/15 | Done |
-   | 2 | 🔄 Active | ██████░░░░░░ 50% | 8/16 | 3 days |
-   | 3 | ⏸️ Pending | ░░░░░░░░░░░░ 0% | 0/12 | TBD |
+   | Phase | Status | Progress | Tasks |
+   |-------|--------|----------|-------|
+   | 1 | ✅ Complete | ████████████ 100% | 15/15 |
+   | 2 | 🔄 Active | ██████░░░░░░ 50% | 8/16 |
+   | 3 | ⏸️ Pending | ░░░░░░░░░░░░ 0% | 0/12 |
    ```
    - Include status icons for quick visual identification
    - Show progress bars using Unicode block characters
    - Display task completion ratios
-   - Provide estimated completion times where applicable
+   - Focus on completion status rather than time estimates
 
 ### 7.6 Resume System Integration
 

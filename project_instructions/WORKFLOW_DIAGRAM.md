@@ -319,11 +319,11 @@ flowchart TD
     P3 --> T3[📄 tasks.md<br/>15 Backend Tasks]
     P4 --> T4[📄 tasks.md<br/>16 Frontend Tasks]
 
-    StatusDash --> Table[📊 Progress Table<br/>Phase Status Progress Tasks ETA]
+    StatusDash --> Table[📊 Progress Table<br/>Phase Status Progress Tasks]
 
-    Table --> Row1[1 ✅ Complete ████████████ 100% 12/12 Done]
-    Table --> Row2[2 🔄 Active ██████░░░░░░ 50% 8/16 3 days]
-    Table --> Row3[3 ⏸️ Pending ░░░░░░░░░░░░ 0% 0/15 TBD]
+    Table --> Row1[1 ✅ Complete ████████████ 100% 12/12]
+    Table --> Row2[2 🔄 Active ██████░░░░░░ 50% 8/16]
+    Table --> Row3[3 ⏸️ Pending ░░░░░░░░░░░░ 0% 0/15]
 
     style M7 fill:#fff3e0
     style PlanIndex fill:#e1f5fe

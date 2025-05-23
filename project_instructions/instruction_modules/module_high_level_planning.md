@@ -152,7 +152,6 @@ Use this template structure for creating high_level_plan.md:
 
 ## Project Overview
 - **Project Type**: [MVP/Home Project/Production System]
-- **Timeline**: [User specified timeline]
 - **Resources**: [Team size and constraints]
 - **Deployment Target**: [Local/Cloud/On-premises]
 - **Source Control**: [Yes/No and platform]
@@ -176,7 +175,6 @@ Use this template structure for creating high_level_plan.md:
 
 ### Phase 1: Foundation Setup
 **Status**: NOT_STARTED
-**Estimated Duration**: [Based on project type]
 **Dependencies**: None
 **LLD Sources**: [DevOps LLD, Database LLD, Coding LLD references]
 
@@ -216,7 +214,6 @@ Use this template structure for creating high_level_plan.md:
 
 ### Phase 2: Database Implementation
 **Status**: NOT_STARTED
-**Estimated Duration**: [Based on project scope]
 **Dependencies**: Phase 1 completion
 **LLD Sources**: [Database LLD, Testing LLD references]
 
@@ -308,10 +305,39 @@ Before marking Module 6 as complete, verify:
 - [ ] Plan-based resume logic is functional
 - [ ] Backward compatibility with status.md is maintained
 - [ ] Status file (../../project_working_files/status.md) updated to COMPLETED
+- [ ] Status.md has been archived to archivebin/ with timestamp backup
+- [ ] High_level_plan.md is now the primary project roadmap
 
 **MANDATORY**: If any planning deliverable is missing or incomplete, repeat the relevant planning steps. The high-level plan becomes the master roadmap for project execution.
 
 **STATUS UPDATE REQUIREMENT**: Update ../../project_working_files/status.md to COMPLETED status with timestamp and completion summary.
+
+### 6.6 Status File Archiving
+
+Execute the following status archiving steps:
+
+1. **Archive Status File**
+   - The high_level_plan.md now serves as the primary project roadmap
+   - Move status.md to archivebin to maintain clean working directory
+   - Preserve status.md as backup for troubleshooting and resume system fallback
+
+2. **Archiving Process**
+   ```bash
+   # Create archive with timestamp
+   cp ../../project_working_files/status.md ../../project_working_files/archivebin/status_$(date +%Y%m%d_%H%M%S).md
+
+   # Move original to archive
+   mv ../../project_working_files/status.md ../../project_working_files/archivebin/status.md
+   ```
+
+3. **Archive Validation**
+   - Verify status.md has been moved to archivebin/
+   - Confirm high_level_plan.md exists and is complete
+   - Ensure resume system can still access archived status if needed
+
+4. **Update Resume System Priority**
+   - Resume system now prioritizes: implementation_plan/ → high_level_plan.md → archivebin/status.md
+   - This ensures clean project structure while maintaining backward compatibility
 
 **DEBUG LOGGING REQUIREMENT**: If debug mode enabled, update ../../project_working_files/debug_log.md with:
 - Module 6 completion summary with user interaction details
@@ -330,4 +356,4 @@ Before marking Module 6 as complete, verify:
 - Updated status tracking with Module 6 completion
 
 ## Next Steps
-Upon successful completion of Module 6, the project instruction system is complete. The high_level_plan.md file becomes the primary guide for actual project implementation, with the resume system providing seamless progress tracking and continuation capability.
+Upon successful completion of Module 6, proceed to Module 7: Implementation Tracking System. The high_level_plan.md file now serves as the primary project roadmap, and Module 7 will create detailed task-level tracking and progress visualization to guide actual implementation.
