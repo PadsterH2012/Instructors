@@ -27,9 +27,15 @@ When an agent starts work, they MUST:
    - If exists: Use plan-based resume logic (see Section 4)
    - If not exists: Use status.md-based resume logic (continue below)
 
-2. **Read Status File (Fallback)**
+2. **Check for System Upgrades**
+   - Check if status.md contains all available modules (0-7)
+   - If Module 7 missing from status.md: System has been upgraded
+   - Add missing modules to status.md with NOT_STARTED status
+   - Notify user of system upgrade and new modules available
+
+3. **Read Status File (Fallback)**
    - Open `../../project_working_files/status.md` file
-   - Identify current module status for each module (0-6)
+   - Identify current module status for each module (0-7)
    - Note any IN_PROGRESS modules
 
 3. **Validate Completed Modules**
@@ -77,7 +83,12 @@ When an agent starts work, they MUST:
 **Module 6 (High-Level Project Planning)**:
 - Status: NOT_STARTED → Verify Module 5 complete, execute Module 6
 - Status: IN_PROGRESS → Resume project planning activities
-- Status: COMPLETED → All modules complete, high-level plan created, system ready for implementation
+- Status: COMPLETED → Proceed to Module 7
+
+**Module 7 (Implementation Tracking System)**:
+- Status: NOT_STARTED → Verify Module 6 complete, execute Module 7
+- Status: IN_PROGRESS → Resume implementation tracking setup
+- Status: COMPLETED → All modules complete, implementation tracking system ready, proceed to actual development using implementation_plan/
 
 ### Step 3: Resume Validation Checklist
 
@@ -112,6 +123,16 @@ Before resuming any module, verify:
 - [ ] Module 4 marked as COMPLETED in status.md
 - [ ] All task management files exist
 - [ ] If IN_PROGRESS: Check validation progress
+
+**For Module 6 Resume**:
+- [ ] Module 5 marked as COMPLETED in status.md
+- [ ] All validation files exist
+- [ ] If IN_PROGRESS: Check high-level planning progress
+
+**For Module 7 Resume**:
+- [ ] Module 6 marked as COMPLETED in status.md
+- [ ] high_level_plan.md exists in ../docs/
+- [ ] If IN_PROGRESS: Check implementation_plan/ structure and STATUS_README.md
 
 ## Resume Instructions for Agents
 
@@ -166,6 +187,17 @@ Before resuming any module, verify:
 - Module 3: IN_PROGRESS
 - Task breakdown file exists for LLD creation
 - Action: Resume from current micro-task in breakdown file
+
+**Scenario 5: System Upgrade Detected**
+- Modules 0-6: COMPLETED
+- Module 7: Missing from status.md (system upgraded)
+- Action: Add Module 7 to status.md as NOT_STARTED, notify user, execute Module 7
+
+**Scenario 6: Implementation Ready Check**
+- All modules 0-7: COMPLETED
+- high_level_plan.md exists
+- implementation_plan/ exists (from Module 7)
+- Action: System ready for actual development, use implementation_plan/ as guide
 
 ## Integration with Task Breakdown
 
@@ -270,4 +302,67 @@ Use status.md resume logic when:
 - Plan format is invalid or incomplete
 - User explicitly requests status.md-based resume
 
-This enhanced resume system provides both high-level project tracking and detailed task-level progress management while maintaining backward compatibility with the original status.md system.
+## System Upgrade Detection and Handling
+
+### Detecting System Upgrades
+
+When an agent starts work, it must check for system upgrades:
+
+1. **Module Count Verification**
+   - Check if status.md contains entries for all available modules (0-7)
+   - Compare against instruction_modules/ directory to detect new modules
+   - If modules are missing from status.md: System has been upgraded
+
+2. **Upgrade Notification**
+   ```markdown
+   🔄 SYSTEM UPGRADE DETECTED
+
+   The project instruction system has been upgraded with new modules:
+   - Module 7: Implementation Tracking System
+
+   I will add the new module to your status tracking and execute it to enhance your project with the latest capabilities.
+
+   This upgrade provides:
+   - Structured implementation tracking with task-level progress
+   - Enhanced progress visualization with STATUS_README dashboard
+   - Phase-based task breakdown for better project management
+
+   Proceeding with Module 7 execution...
+   ```
+
+3. **Status File Update**
+   - Add missing modules to status.md with NOT_STARTED status
+   - Maintain existing module statuses
+   - Update status file format if needed for new features
+
+4. **Automatic Module Execution**
+   - Execute newly detected modules in sequence
+   - Follow normal module prerequisites and validation
+   - Update status as modules complete
+
+### Upgrade Scenarios
+
+**Scenario A: Module 7 Added After Module 6 Complete**
+- Current: Modules 0-6 COMPLETED
+- Action: Add Module 7 as NOT_STARTED, execute Module 7
+- Result: Complete system with implementation tracking
+
+**Scenario B: Multiple New Modules**
+- Current: Modules 0-5 COMPLETED
+- New: Modules 6-7 available
+- Action: Add both modules, execute in sequence (6 then 7)
+
+**Scenario C: Mid-Project Upgrade**
+- Current: Module 3 IN_PROGRESS
+- New: Module 7 available
+- Action: Add Module 7 as NOT_STARTED, continue current work, execute Module 7 when prerequisites met
+
+### Backward Compatibility
+
+The enhanced resume system maintains full backward compatibility:
+- Existing status.md files continue to work
+- Old projects can be upgraded seamlessly
+- No data loss during system upgrades
+- Graceful handling of missing or new modules
+
+This enhanced resume system provides both high-level project tracking and detailed task-level progress management while maintaining backward compatibility and handling system upgrades automatically.
