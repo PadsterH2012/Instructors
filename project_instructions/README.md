@@ -244,6 +244,8 @@ Module 0 → Module 1 → Module 2 → Module 3 → Module 4 → Module 5 → Mo
 Setup    Research   Docs      LLD      Tasks   Validation Planning  Tracking
 ```
 
+**📊 Visual Workflow**: See [WORKFLOW_DIAGRAM.md](WORKFLOW_DIAGRAM.md) for comprehensive Mermaid diagrams showing the complete system workflow, date context flow, resume logic, and progress tracking hierarchy.
+
 ### Detailed Step-by-Step Process
 
 1. **🏗️ Module 0 - Initial Setup**

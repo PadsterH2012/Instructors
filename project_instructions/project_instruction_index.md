@@ -170,3 +170,13 @@ All status updates should be made in the status file, not in this index or the m
 - Validates completed modules before proceeding
 - Provides status-based execution logic
 - Enhanced with plan-based resume capability (priority over status.md when high_level_plan.md exists)
+
+## Visual Documentation
+
+**Workflow Diagrams**: `WORKFLOW_DIAGRAM.md`
+- Comprehensive Mermaid diagrams showing complete system workflow
+- Date context flow and research integration
+- Resume system logic and decision trees
+- Progress tracking hierarchy (module → phase → task levels)
+- Implementation tracking visualization
+- Safety and isolation architecture
