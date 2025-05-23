@@ -8,7 +8,9 @@
 - ALL technology decisions MUST be based ONLY on current research using the specified tools
 
 **MANDATORY TOOL USAGE RULES**:
-- ALL technology research MUST use brave_web_search with current dates (May 2025)
+- READ ../../project_working_files/system_info.env for current date context before starting research
+- ALL technology research MUST use brave_web_search with current date context from system_info.env
+- Include CURRENT_YEAR from system_info.env in all search queries for latest information
 - ALL component compatibility research MUST use Context7 tools (resolve-library-id and get-library-docs)
 - NO assumptions about technology compatibility without explicit Context7 verification
 - ALL recommendations MUST include source URLs and research dates
@@ -41,6 +43,7 @@ This module contains mandatory research directives that must be completed before
 - Access to resolve-library-id and get-library-docs Context7 tools
 - Project plan file (../project_input/project_plan.txt) has been read and analyzed
 - **Module 0 (Initial Setup) must be COMPLETED** - verify in ../../project_working_files/status.md
+- System date context file (../../project_working_files/system_info.env) exists with current date information
 - Isolated directory structure exists (created by Module 0):
   - "../../project_working_files/working_files/research/" folder for research outputs
   - "../../project_working_files/working_files/tasks/" folder for task breakdown files
@@ -54,9 +57,11 @@ This module contains mandatory research directives that must be completed before
 Execute the following research steps:
 
 1. **Current Best Practices Research**
+   - Read ../../project_working_files/system_info.env to get current date context
    - Use brave_web_search to research current best practices for the identified technology domain
-   - Search for "best practices [technology domain] May 2025 latest versions compatibility"
-   - Search for "current technology stack [project type] production ready May 2025"
+   - Include CURRENT_YEAR from system_info.env in search queries (e.g., "best practices [technology domain] [CURRENT_YEAR] latest versions")
+   - Search for "current technology stack [project type] production ready [CURRENT_YEAR]"
+   - Reference RESEARCH_CONTEXT from system_info.env for appropriate temporal scope
    - Document all findings with source URLs and dates
    - **DEBUG LOGGING**: If debug mode enabled, log each search query, reasoning for the query, and summary of results to ../debug_log.md
 
@@ -100,14 +105,15 @@ Execute the following compatibility research steps:
 Execute the following industry standards research steps:
 
 1. **Architecture Patterns Research**
+   - Read ../../project_working_files/system_info.env for current date context
    - Use brave_web_search to research industry standards for the project domain
-   - Search for "[project domain] architecture patterns May 2025"
+   - Search for "[project domain] architecture patterns [CURRENT_YEAR]" using date from system_info.env
    - Research current architectural best practices
    - Identify recommended design patterns for the project type
 
 2. **Deployment and Security Research**
-   - Search for "production deployment best practices [technology stack] May 2025"
-   - Search for "security best practices [technology stack] May 2025"
+   - Search for "production deployment best practices [technology stack] [CURRENT_YEAR]" using date from system_info.env
+   - Search for "security best practices [technology stack] [CURRENT_YEAR]" using date from system_info.env
    - Research containerization standards
    - Research CI/CD pipeline best practices
 

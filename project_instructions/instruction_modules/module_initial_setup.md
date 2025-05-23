@@ -140,7 +140,42 @@ Execute the following debug setup steps ONLY if "--debug" flag was provided:
 - Are tool usage requirements being followed?
 ```
 
-### 0.3 Status Tracking File Creation
+### 0.3 System Date Context Capture
+
+Execute the following system date capture steps:
+
+1. **Capture Current System Date and Time**
+   - Create system_info.env file with current date information
+   - This provides date context for all research and development activities
+   - Ensures agents use current date when searching for latest information
+
+2. **System Date Capture Commands**
+   Execute the following commands to capture system date:
+   ```bash
+   # Capture current date information for research context
+   echo "CURRENT_DATE=$(date '+%Y-%m-%d')" > ../../project_working_files/system_info.env
+   echo "CURRENT_DATETIME=$(date '+%Y-%m-%d %H:%M:%S %Z')" >> ../../project_working_files/system_info.env
+   echo "CURRENT_YEAR=$(date '+%Y')" >> ../../project_working_files/system_info.env
+   echo "RESEARCH_CONTEXT=Focus on information from $(date '+%Y') and late $(($(date '+%Y')-1))" >> ../../project_working_files/system_info.env
+   ```
+
+3. **Date Context Usage Instructions**
+   - All research modules should reference this file for current date context
+   - Include current year in technology searches (e.g., "latest 2024 FastAPI best practices")
+   - Use CURRENT_DATE as baseline for information currency validation
+   - Reference RESEARCH_CONTEXT for appropriate temporal scope
+
+**Windows Users**: If using Windows without Unix-like environment:
+- Install Git Bash or WSL for `date` command support
+- Alternatively, manually create system_info.env with current date:
+  ```
+  CURRENT_DATE=2024-12-19
+  CURRENT_DATETIME=2024-12-19 20:00:00 UTC
+  CURRENT_YEAR=2024
+  RESEARCH_CONTEXT=Focus on information from 2024 and late 2023
+  ```
+
+### 0.4 Status Tracking File Creation
 
 Execute the following status file creation steps:
 
@@ -316,6 +351,7 @@ Before proceeding to Module 1, verify that all setup is complete:
 - [ ] "../../project_working_files/working_files/tasks/" directory exists
 - [ ] "../../project_working_files/docs/" directory exists
 - [ ] "../../project_working_files/docs/documentation/" directory exists
+- [ ] "../../project_working_files/system_info.env" file exists with current date information
 - [ ] "../../project_working_files/status.md" file exists and contains the complete template
 - [ ] Module 0 status is marked as COMPLETED in status.md
 - [ ] Status update history contains the completion entry for Module 0
@@ -328,6 +364,7 @@ Before proceeding to Module 1, verify that all setup is complete:
 **STATUS UPDATE REQUIREMENT**: Update ../../project_working_files/status.md to COMPLETED status with timestamp and completion summary before proceeding to Module 1.
 
 ## Output Files
+- ../../project_working_files/system_info.env (current date context for research)
 - ../../project_working_files/status.md (unified status and task tracking)
 - ../../project_working_files/working_files/ directory structure
 - ../../project_working_files/docs/ directory (final documentation)
