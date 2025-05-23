@@ -20,7 +20,7 @@ flowchart TD
     Status --> M6[📊 Module 6: High-Level Planning]
     Status --> M7[📈 Module 7: Implementation Tracking]
 
-    M0 --> M0_Tasks[📅 Capture System Date<br/>🗂️ Create Directory Structure<br/>📊 Initialize Status Tracking]
+    M0 --> M0_Tasks[📅 Capture System Date<br/>🗂️ Create Directory Structure<br/>❓ Interactive Context Assessment<br/>📊 Initialize Status Tracking]
     M0_Tasks --> M1
 
     M1 --> M1_Tasks[📅 Read Date Context<br/>🔍 Technology Research<br/>🔧 Component Compatibility<br/>📋 Industry Standards]
@@ -38,7 +38,7 @@ flowchart TD
     M5 --> M5_Tasks[✅ Validate All Modules<br/>📋 Final Project Plan<br/>🔍 Completion Verification]
     M5_Tasks --> M6
 
-    M6 --> M6_Tasks[👤 User Context Assessment<br/>📊 MVP Progression Examples<br/>🗺️ Comprehensive Roadmap<br/>🔄 Enhanced Resume System]
+    M6 --> M6_Tasks[📋 Integrate Project Context<br/>📊 MVP Progression Examples<br/>🗺️ Comprehensive Roadmap<br/>🔄 Enhanced Resume System]
     M6_Tasks --> M7
 
     M7 --> M7_Tasks[📁 Implementation Plan Structure<br/>📋 Task Breakdown per Phase<br/>📊 Progress Visualization<br/>📈 STATUS_README Dashboard]
@@ -85,6 +85,99 @@ flowchart LR
     style Date fill:#fff3e0
     style Env fill:#e8f5e8
     style Quality fill:#e1f5fe
+```
+
+## ❓ Progressive Context Assessment (Module 0)
+
+```mermaid
+flowchart TD
+    Start([📅 System Date Captured]) --> Q1[❓ Question 1: Project Longevity]
+
+    Q1 --> Q1Options{User Response}
+    Q1Options -->|A| Personal[🏠 Personal/Learning Tool]
+    Q1Options -->|B| Growth[🔄 Potential Growth Project]
+    Q1Options -->|C| Scalable[🚀 Scalable from Day One]
+    Q1Options -->|D| Flexible[🤔 Uncertain/Flexible]
+    Q1Options -->|N| Q2[❓ Question 2: User Access Pattern]
+    Q1Options -->|M| Done[✅ Context Complete]
+    Q1Options -->|R| Rephrase1[🔄 Rephrase Question 1]
+    Q1Options -->|+| Context1[➕ Add Context to Q1]
+
+    Personal --> Q2
+    Growth --> Q2
+    Scalable --> Q2
+    Flexible --> Q2
+    Rephrase1 --> Q1
+    Context1 --> Q1
+
+    Q2 --> Q2Options{User Response}
+    Q2Options -->|A| SingleUser[👤 Single User Only]
+    Q2Options -->|B| SmallTeam[👥 Small Team/Family]
+    Q2Options -->|C| MultiUser[🏢 Multi-User Application]
+    Q2Options -->|D| PublicAccess[🌐 Public/Community Access]
+    Q2Options -->|N| Q3[❓ Question 3: Infrastructure Evolution]
+    Q2Options -->|M| Done
+    Q2Options -->|R| Rephrase2[🔄 Rephrase Question 2]
+    Q2Options -->|+| Context2[➕ Add Context to Q2]
+
+    SingleUser --> Q3
+    SmallTeam --> Q3
+    MultiUser --> Q3
+    PublicAccess --> Q3
+    Rephrase2 --> Q2
+    Context2 --> Q2
+
+    Q3 --> Q3Options{User Response}
+    Q3Options -->|A| LocalOnly[🏠 Always Local/Homelab]
+    Q3Options -->|B| CloudMigration[☁️ Potential Cloud Migration]
+    Q3Options -->|C| KubernetesReady[🚢 Kubernetes Ready]
+    Q3Options -->|D| HybridFlexible[🔄 Hybrid/Flexible]
+    Q3Options -->|N| Q4[❓ Question 4: Data Integration]
+    Q3Options -->|M| Done
+
+    LocalOnly --> Q4
+    CloudMigration --> Q4
+    KubernetesReady --> Q4
+    HybridFlexible --> Q4
+
+    Q4 --> Q4Options{User Response}
+    Q4Options -->|A| SimpleData[📁 Simple Data Storage]
+    Q4Options -->|B| SomeIntegrations[🔗 Some Integrations]
+    Q4Options -->|C| IntegrationHub[🌐 Integration Hub]
+    Q4Options -->|D| DataDriven[📊 Data-Driven Platform]
+    Q4Options -->|N| Q5[❓ Question 5: Technology Preferences]
+    Q4Options -->|M| Done
+
+    SimpleData --> Q5
+    SomeIntegrations --> Q5
+    IntegrationHub --> Q5
+    DataDriven --> Q5
+
+    Q5 --> Q5Options{User Response}
+    Q5Options -->|A| SpecificStack[🎯 Specific Stack Required]
+    Q5Options -->|B| LearningFocused[🔧 Learning-Focused]
+    Q5Options -->|C| BestPractice[🚀 Best Practice Focus]
+    Q5Options -->|D| OpenRecommendations[🆓 Open to Recommendations]
+    Q5Options -->|M| Done
+
+    SpecificStack --> Done
+    LearningFocused --> Done
+    BestPractice --> Done
+    OpenRecommendations --> Done
+
+    Done --> Compile[📝 Compile Context]
+    Compile --> Validate[✅ Validate with User]
+    Validate --> ContextFile[📄 Create project_context.md]
+    ContextFile --> Research[🔍 Ready for Targeted Research]
+
+    style Start fill:#e1f5fe
+    style Done fill:#e8f5e8
+    style Research fill:#fff3e0
+    style Q1 fill:#f3e5f5
+    style Q2 fill:#e8eaf6
+    style Q3 fill:#e0f2f1
+    style Q4 fill:#fff8e1
+    style Q5 fill:#fce4ec
 ```
 
 ## 🔄 Resume System Logic

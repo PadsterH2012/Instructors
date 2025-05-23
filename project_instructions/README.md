@@ -174,9 +174,10 @@ Debug logs help identify:
 **Module 0: Initial Setup** (`module_initial_setup.md`)
 - Creates isolated `project_working_files/` structure
 - **Captures current system date context** for research accuracy
+- **Interactive project context assessment** with progressive questions about longevity, users, infrastructure, and technology preferences
 - Establishes status tracking system
 - Sets up debug logging (if enabled)
-- **Output**: Complete isolated working environment, `system_info.env` with date context
+- **Output**: Complete isolated working environment, `system_info.env` with date context, `project_context.md` with user responses
 
 **Module 1: Research Phase** (`module_research_phase.md`)
 - **Uses current date context** from `system_info.env` for up-to-date research
@@ -208,7 +209,7 @@ Debug logs help identify:
 - **Output**: Validation reports in `docs/`
 
 **Module 6: High-Level Project Planning** (`module_high_level_planning.md`)
-- User-interactive project context assessment (MVP/home project/production system)
+- Integrates project context from Module 0 assessment
 - MVP progression examples (5 development phases: Basic → Enhanced → Intermediate → Advanced → Production-ready)
 - Comprehensive project roadmap creation with phases, tasks, and milestones
 - **Output**: Master project plan in `docs/high_level_plan.md`, enhanced resume system
@@ -251,6 +252,7 @@ Setup    Research   Docs      LLD      Tasks   Validation Planning  Tracking
 1. **🏗️ Module 0 - Initial Setup**
    - Creates `project_working_files/` structure
    - Captures current system date context for research accuracy
+   - **Interactive project context assessment** with progressive questions
    - Initializes `status.md` tracking file
    - Sets up debug logging (if enabled)
 
@@ -283,7 +285,7 @@ Setup    Research   Docs      LLD      Tasks   Validation Planning  Tracking
    - Outputs validation reports to `docs/`
 
 7. **📋 Module 6 - High-Level Project Planning**
-   - Queries user for project context (MVP/home project/production system)
+   - Integrates project context from Module 0 assessment
    - Provides MVP progression examples if applicable (5 phases: Basic → Enhanced → Intermediate → Advanced → Production-ready)
    - Creates comprehensive project roadmap with phases, tasks, and milestones
    - Enhances resume system with plan-based tracking

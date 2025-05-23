@@ -24,6 +24,7 @@ This module creates a comprehensive, actionable project roadmap by synthesizing 
 
 ## Prerequisites
 - **Modules 0-5 must be COMPLETED** - verify in ../../project_working_files/status.md
+- Project context file exists: ../../project_working_files/project_context.md (from Module 0)
 - All research files exist in ../../project_working_files/working_files/research/
 - All documentation exists in ../../project_working_files/docs/
 - All LLD files exist in ../../project_working_files/working_files/design/
@@ -31,44 +32,27 @@ This module creates a comprehensive, actionable project roadmap by synthesizing 
 
 ## Execution Directives
 
-### 6.1 Project Context Assessment
+### 6.1 Project Context Integration
 
-Execute the following user interaction steps:
+Execute the following context integration steps:
 
-1. **Project Scope Query**
-   Query the user with these specific questions:
+1. **Read Project Context from Module 0**
+   - Read ../../project_working_files/project_context.md (created in Module 0)
+   - Extract user responses and architectural implications
+   - Review context analysis and technology guidance
+   - Understand scalability requirements and deployment strategy
 
-   ```
-   PROJECT SCOPE ASSESSMENT:
+2. **Context Validation and Clarification**
+   - Confirm project context is still accurate with user
+   - Ask for any updates or changes since Module 0
+   - Clarify any ambiguous requirements for planning
+   - Document any new context or changes
 
-   1. Project Type: Is this an MVP (Minimum Viable Product), home project, or production system?
-      - MVP: Focus on core functionality with rapid development
-      - Home Project: Personal/learning project with flexible timeline
-      - Production System: Full-featured system with enterprise requirements
-
-   2. Source Control: Do you plan to use source control (Git, GitHub, GitLab, etc.)?
-      - Yes: Include version control setup and workflow in planning
-      - No: Focus on local development and backup strategies
-
-   3. Timeline and Resources: What is your target timeline and resource constraints?
-      - Timeline: Days, weeks, months, or flexible
-      - Resources: Solo developer, small team, or larger team
-      - Budget constraints: Any specific technology or hosting limitations
-
-   4. Deployment Requirements: Are there specific deployment requirements or constraints?
-      - Local deployment only
-      - Cloud deployment (AWS, Azure, GCP, etc.)
-      - On-premises deployment
-      - Specific hosting requirements or constraints
-
-   5. Additional Context: Any other project-specific requirements or constraints?
-   ```
-
-2. **Response Analysis**
-   - Document user responses in detail
-   - Identify planning approach based on project type
-   - Note any special requirements or constraints
-   - Determine appropriate planning template to use
+3. **Planning Approach Determination**
+   - Use project context to determine appropriate planning template
+   - Identify complexity level and architectural approach
+   - Note specific requirements and constraints from context
+   - Align planning with long-term vision and growth potential
 
 ### 6.2 MVP Planning (If Applicable)
 
@@ -307,8 +291,8 @@ Execute the following resume system updates:
 
 Before marking Module 6 as complete, verify:
 
-- [ ] User has been queried for project context and requirements
-- [ ] User responses have been documented and analyzed
+- [ ] Project context has been read from project_context.md (Module 0)
+- [ ] Context validation and clarification completed with user
 - [ ] MVP progression examples provided (if applicable)
 - [ ] high_level_plan.md file created in ../../project_working_files/docs/
 - [ ] **MANDATORY**: Plan includes detailed tasks and subtasks derived from ALL 5 LLD domains

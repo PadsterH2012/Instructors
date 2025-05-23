@@ -175,7 +175,206 @@ Execute the following system date capture steps:
   RESEARCH_CONTEXT=Focus on information from 2024 and late 2023
   ```
 
-### 0.4 Status Tracking File Creation
+### 0.4 Project Context Assessment
+
+Execute the following interactive context gathering steps:
+
+**CRITICAL INTERACTION REQUIREMENT**:
+- Ask ONE question at a time and WAIT for user response before proceeding
+- Do NOT ask multiple questions simultaneously
+- Allow flexible navigation through the question flow
+- Document all responses for subsequent module guidance
+
+**Question Flow Control Options**:
+- **(A, B, C, D)**: Direct answer choices
+- **(N)**: Skip this question, ask next
+- **(M)**: No more context needed, proceed with current information
+- **(R)**: Rephrase this question differently for clarity
+- **(+)**: I want to add additional context about this topic
+
+**QUESTION 1: Project Longevity and Growth Potential**
+
+Ask the user:
+"What are your long-term expectations for this project?
+
+A) 🏠 **Personal/Learning Tool**
+   - Stays personal, no sharing planned
+   - Focus on learning and experimentation
+   - Simple architecture acceptable
+
+B) 🔄 **Potential Growth Project**
+   - Might need to scale or share later
+   - Could become multi-user in future
+   - Design for extensibility from start
+
+C) 🚀 **Scalable from Day One**
+   - Expecting growth and multiple users
+   - Plan for production-level architecture
+   - Build with scaling in mind
+
+D) 🤔 **Uncertain/Flexible**
+   - Not sure about future needs
+   - Want options to scale if needed
+   - Prefer adaptable architecture
+
+Please respond with: A, B, C, D, N (skip), M (done), R (rephrase), or + (add context)"
+
+**WAIT FOR RESPONSE** - Do not proceed until user responds.
+
+**QUESTION 2: User Access Pattern** (ask only if user didn't choose M or N in previous)
+
+Ask the user:
+"How do you envision user access to this application?
+
+A) 👤 **Single User Only**
+   - Just for personal use
+   - No authentication complexity needed
+   - Simple local access
+
+B) 👥 **Small Team/Family**
+   - 2-10 known users
+   - Basic user management
+   - Shared but controlled access
+
+C) 🏢 **Multi-User Application**
+   - Many users, potentially unknown
+   - Full authentication/authorization
+   - Role-based access control
+
+D) 🌐 **Public/Community Access**
+   - Open registration or public access
+   - Scalable user management
+   - Security-first design
+
+Please respond with: A, B, C, D, N (skip), M (done), R (rephrase), or + (add context)"
+
+**WAIT FOR RESPONSE** - Do not proceed until user responds.
+
+**QUESTION 3: Infrastructure Evolution** (ask only if user didn't choose M or N in previous)
+
+Ask the user:
+"How might your hosting/infrastructure needs evolve?
+
+A) 🏠 **Always Local/Homelab**
+   - Docker Compose on local machine
+   - No cloud deployment planned
+   - Simple backup strategies
+
+B) ☁️ **Potential Cloud Migration**
+   - Start local, might move to cloud
+   - Design for container portability
+   - Cloud-ready architecture
+
+C) 🚢 **Kubernetes Ready**
+   - Might deploy to K8s clusters
+   - Microservices-friendly design
+   - Container-native approach
+
+D) 🔄 **Hybrid/Flexible**
+   - Want deployment flexibility
+   - Multi-environment capable
+   - Infrastructure-agnostic design
+
+Please respond with: A, B, C, D, N (skip), M (done), R (rephrase), or + (add context)"
+
+**WAIT FOR RESPONSE** - Do not proceed until user responds.
+
+**QUESTION 4: Data and Integration Scope** (ask only if user didn't choose M or N in previous)
+
+Ask the user:
+"What's your vision for data and external integrations?
+
+A) 📁 **Simple Data Storage**
+   - Basic database needs
+   - Minimal external connections
+   - Self-contained system
+
+B) 🔗 **Some Integrations**
+   - Connect to a few external services
+   - API integrations planned
+   - Moderate data complexity
+
+C) 🌐 **Integration Hub**
+   - Many external service connections
+   - Complex data flows
+   - API-first design
+
+D) 📊 **Data-Driven Platform**
+   - Heavy analytics/reporting
+   - Multiple data sources
+   - Advanced data processing
+
+Please respond with: A, B, C, D, N (skip), M (done), R (rephrase), or + (add context)"
+
+**WAIT FOR RESPONSE** - Do not proceed until user responds.
+
+**QUESTION 5: Technology Preferences** (ask only if user didn't choose M or N in previous)
+
+Ask the user:
+"Do you have specific technology preferences or constraints?
+
+A) 🎯 **Specific Stack Required**
+   - Must use certain technologies
+   - Existing infrastructure constraints
+   - Compliance requirements
+
+B) 🔧 **Learning-Focused**
+   - Want to learn specific technologies
+   - Educational goals important
+   - Technology exploration priority
+
+C) 🚀 **Best Practice Focus**
+   - Use current industry standards
+   - Proven, stable technologies
+   - Production-ready choices
+
+D) 🆓 **Open to Recommendations**
+   - No strong preferences
+   - Trust agent's research
+   - Optimize for project goals
+
+Please respond with: A, B, C, D, N (skip), M (done), R (rephrase), or + (add context)"
+
+**WAIT FOR RESPONSE** - Do not proceed until user responds.
+
+**CONTEXT COMPILATION AND DOCUMENTATION**
+
+After gathering all responses, create comprehensive project context documentation:
+
+1. **Create Project Context File**
+   - Create ../../project_working_files/project_context.md
+   - Document all user responses and their implications
+   - Include architecture guidance for subsequent modules
+
+2. **Context Analysis and Implications**
+   Based on user responses, document:
+   - **Architecture Direction**: Monolith vs microservices, complexity level
+   - **Technology Constraints**: Required vs recommended technologies
+   - **Scalability Requirements**: Current and future scaling needs
+   - **Security Considerations**: Authentication, authorization, data protection
+   - **Deployment Strategy**: Local, cloud, hybrid, container orchestration
+   - **Integration Approach**: API design, external service connections
+   - **Development Approach**: Learning goals vs production focus
+
+3. **Research Guidance for Subsequent Modules**
+   Create specific guidance for:
+   - **Module 1 Research**: Technology focus areas based on context
+   - **Module 2 Documentation**: Scope and complexity appropriate documentation
+   - **Module 3 LLD**: Architecture patterns and design decisions
+   - **Module 6 Planning**: Implementation phases aligned with context
+
+**DYNAMIC FOLLOW-UP QUESTIONS** (if additional context needed):
+- If "Kubernetes Ready" → Ask about service mesh, monitoring preferences
+- If "Multi-User Application" → Ask about authentication providers, user roles
+- If "Learning-Focused" → Ask about specific technologies to explore
+- If "Integration Hub" → Ask about API standards, message queues
+- If "Specific Stack Required" → Ask about required technologies, constraints
+
+**VALIDATION CHECKPOINT**:
+Before proceeding, confirm with user:
+"Based on your responses, I understand this is a [summary of context]. This will guide all subsequent research and design decisions. Does this accurately capture your vision? (Y/N/Clarify)"
+
+### 0.5 Status Tracking File Creation
 
 Execute the following status file creation steps:
 
@@ -352,6 +551,7 @@ Before proceeding to Module 1, verify that all setup is complete:
 - [ ] "../../project_working_files/docs/" directory exists
 - [ ] "../../project_working_files/docs/documentation/" directory exists
 - [ ] "../../project_working_files/system_info.env" file exists with current date information
+- [ ] "../../project_working_files/project_context.md" file exists with user responses and implications
 - [ ] "../../project_working_files/status.md" file exists and contains the complete template
 - [ ] Module 0 status is marked as COMPLETED in status.md
 - [ ] Status update history contains the completion entry for Module 0
@@ -365,6 +565,7 @@ Before proceeding to Module 1, verify that all setup is complete:
 
 ## Output Files
 - ../../project_working_files/system_info.env (current date context for research)
+- ../../project_working_files/project_context.md (user responses and architecture guidance)
 - ../../project_working_files/status.md (unified status and task tracking)
 - ../../project_working_files/working_files/ directory structure
 - ../../project_working_files/docs/ directory (final documentation)
