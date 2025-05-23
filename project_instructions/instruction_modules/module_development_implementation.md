@@ -80,7 +80,13 @@ Execute the following project structure creation steps:
    - **VALIDATE**: Run `git status` to verify project_instructions/ is ignored
    - **FORBIDDEN**: Never initialize git inside the [project_name]/ directory
 
-5. **Documentation Integration**
+5. **Application Documentation Movement**
+   - **CRITICAL**: Move the `documentation/` folder from `../../project_working_files/docs/documentation/` to `../../[project_name]/documentation/`
+   - **PURPOSE**: The self-referencing application documentation belongs with the actual project, not in working files
+   - **VALIDATION**: Verify the documentation folder exists in the project directory after move
+   - **PRESERVE**: Keep other docs (project_scope.md, high_level_plan.md, etc.) in project_working_files/docs/
+
+6. **Documentation Integration**
    - Add implementation startup notes to existing docs/implementation_notes.md
    - Update high_level_plan.md with Module 8 implementation progress
    - Reference specific LLD sections being implemented
@@ -306,6 +312,9 @@ Before marking Module 8 as COMPLETED, verify:
 - [ ] NO testing workarounds implemented - proper solutions only
 
 **Documentation Validation**:
+- [ ] Application documentation moved from `../../project_working_files/docs/documentation/` to `../../[project_name]/documentation/`
+- [ ] Self-referencing application documentation is now part of the actual project
+- [ ] Project documentation (scope, HLD, etc.) remains in project_working_files/docs/
 - [ ] All existing documentation updated with implementation details
 - [ ] Project identity maintained throughout implementation
 - [ ] LLD traceability documented for all implementation decisions
@@ -321,6 +330,7 @@ Before marking Module 8 as COMPLETED, verify:
 
 ## Output Files
 - ../../[project_name]/ (complete project implementation)
+- ../../[project_name]/documentation/ (self-referencing application documentation - moved from working files)
 - ../../[project_name]/scripts/ (application lifecycle scripts)
 - ../../project_working_files/scripts/ (testing and validation scripts)
 - Updated documentation in docs/ with implementation details
