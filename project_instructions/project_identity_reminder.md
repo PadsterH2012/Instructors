@@ -90,6 +90,59 @@ Before any git operations, verify:
 4. **Run development** with `docker-compose up`
 5. **Execute tests** within containers using `docker-compose exec`
 
+### 🔄 DOCKER TROUBLESHOOTING AND RECOVERY
+
+**When Docker containers keep failing or have persistent issues**:
+
+**Step 1: Stop All Containers**
+```bash
+docker-compose down
+```
+
+**Step 2: Purge Docker System (Nuclear Option)**
+```bash
+# Remove all containers, networks, images, and build cache
+docker system prune -a --volumes
+
+# Alternative: More targeted cleanup
+docker container prune -f
+docker image prune -a -f
+docker volume prune -f
+docker network prune -f
+```
+
+**Step 3: Rebuild from Clean State**
+```bash
+# Rebuild containers without cache
+docker-compose build --no-cache
+
+# Start fresh containers
+docker-compose up --build
+```
+
+**Step 4: Verify Clean Build**
+```bash
+# Check container status
+docker-compose ps
+
+# Check logs for any issues
+docker-compose logs
+
+# Test container functionality
+docker-compose exec [service_name] [test_command]
+```
+
+### 🚨 WHEN TO USE DOCKER PURGE
+**Use docker system purge when**:
+- Containers fail to start repeatedly
+- Build cache is corrupted
+- Dependency conflicts persist across rebuilds
+- "Image not found" or "Layer not found" errors
+- Persistent networking issues between containers
+- Volume mounting problems
+
+**WARNING**: Docker purge will remove ALL Docker data on the system, including other projects. Use with caution on shared development machines.
+
 ## 📁 SCRIPT ORGANIZATION RULES
 
 ### 🧪 TESTING SCRIPTS LOCATION
@@ -198,9 +251,11 @@ Before any git operations, verify:
 
 ### 🚫 NO WORKAROUNDS POLICY
 - **If tests fail**: Fix the underlying code issue
-- **If containers don't start**: Fix the configuration
+- **If containers don't start**: Fix the configuration (try Docker purge if persistent)
+- **If containers keep failing**: Use Docker system purge and rebuild from clean state
 - **If dependencies conflict**: Resolve properly, don't bypass
 - **If implementation is complex**: Break it down, don't shortcut
+- **If Docker cache is corrupted**: Purge system and rebuild without cache
 
 ### ✅ PROPER PROBLEM SOLVING AND RESEARCH
 - **Research current best practices** using system_info.env date context
@@ -255,6 +310,10 @@ Before any git operations, verify:
 - **Create component-specific CSS files** - avoid monolithic stylesheets
 - **Keep files manageable** (300-500 lines max) for agent processing
 - **Use Context7 and brave_web_search** when guidance is needed
+- **Troubleshoot Docker issues properly**:
+  - If containers fail repeatedly, use `docker system prune -a --volumes`
+  - Rebuild with `docker-compose build --no-cache`
+  - Never bypass Docker with system installations
 - **Document decisions** and maintain traceability
 
 ### ✅ BEFORE COMPLETING ANY IMPLEMENTATION PHASE
@@ -266,6 +325,11 @@ Before any git operations, verify:
   - .gitignore file is at same level as .git directory
   - Git status shows project_instructions/ and archivebin/ are ignored
   - No .git directory exists inside [project_name]/ folder
+- **Validate Docker environment**:
+  - All containers start successfully with `docker-compose up`
+  - No system package installations were performed
+  - All dependencies managed through Docker containers
+  - If containers failed, Docker purge and rebuild was used (not system workarounds)
 - **Check file organization**:
   - No files exceed 500 lines
   - Components have individual CSS files
