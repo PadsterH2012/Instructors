@@ -42,6 +42,10 @@ Execute the following HLD creation steps:
 
 2. **HLD Creation Process**
    - Create project_hld.md in the project folder (relative to instruction.md) based on project_scope.md
+   - **SCALABILITY NOTE**: For very complex projects (enterprise-level), consider splitting into multiple HLD files if content exceeds 1000 lines:
+     - project_hld_architecture.md (System architecture and component overview)
+     - project_hld_integration.md (Component interactions and interfaces)
+     - project_hld_security.md (Security architecture and considerations)
    - MANDATORY: Base all technology choices on validated_tech_stack.md from Research Phase
    - Incorporate findings from research_findings.md, component_compatibility.md, and industry_standards.md
    - Include system architecture, component interactions, and technology stack
@@ -101,7 +105,7 @@ Execute the following validation checkpoint:
 Before proceeding to Module 3, verify that all deliverables are complete:
 
 - [ ] project_scope.md exists and contains comprehensive project scope
-- [ ] project_hld.md exists and incorporates all research findings
+- [ ] project_hld.md (or multiple HLD files for complex projects) exists and incorporates all research findings
 - [ ] techstack.md exists and aligns with validated_tech_stack.md
 - [ ] All documentation references research findings appropriately
 - [ ] Technology choices are consistent across all documents
@@ -110,7 +114,7 @@ Before proceeding to Module 3, verify that all deliverables are complete:
 
 ## Output Files
 - project_scope.md
-- project_hld.md
+- project_hld.md (or multiple HLD files for complex projects)
 - techstack.md
 
 ## Next Module

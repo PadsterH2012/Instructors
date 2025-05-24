@@ -4,7 +4,7 @@
 
 **PROBLEM IDENTIFIED**: The project instruction system is experiencing "tool input too large" errors despite micro-task frameworks.
 
-**ROOT CAUSE**: LLD files (500-750 lines) and detailed task descriptions exceed tool input limits.
+**ROOT CAUSE**: LLD files (up to 800 lines) and detailed task descriptions exceed tool input limits.
 
 **MANDATORY SOLUTION**: All agents MUST follow the Enhanced Micro-Task Framework V2 before executing any tasks.
 
@@ -61,7 +61,7 @@
 
 ### WRONG: Processing Entire LLD File
 ```
-❌ view /path/to/db_lld_01.md (743 lines - TOO LARGE)
+❌ view /path/to/db_lld_01.md (800 lines - TOO LARGE)
 ❌ Copy entire schema section to new file
 ```
 
