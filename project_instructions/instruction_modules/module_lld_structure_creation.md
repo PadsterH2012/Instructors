@@ -9,6 +9,15 @@
 - **Each LLD file can be up to 800 lines for proper detail**
 - **NEVER cram multiple complex topics into a single file to stay under limits**
 
+## 🚨 CRITICAL: NO SHORTCUTS ALLOWED
+
+**MANDATORY COMPLETION REQUIREMENT**:
+- **COMPLETE ALL PLANNED LLD FILES** before proceeding to Module 4
+- **DO NOT suggest shortcuts** like "proceed with partial completion"
+- **DO NOT move to Module 4** until ALL LLD files in ALL domains are complete
+- **USE INCREMENTAL FILE CREATION** to avoid "tool input too large" errors
+- **NO EXCEPTIONS**: If you plan 19 database LLD files, create all 19 files
+
 ## CRITICAL: Self-Referencing Documentation Rules
 
 **MANDATORY DOCUMENTATION REFERENCE REQUIREMENT**:
@@ -131,11 +140,17 @@ Execute the following documentation creation steps:
 
 4. **LLD Development Guidelines**
    - Each LLD file should cover up to 800 lines of focused, related topics
+   - **TOPIC-DRIVEN APPROACH**: Focus on coverage areas, not pre-assigned file numbers
+   - **DYNAMIC FILE CREATION**: Create files based on actual content size, don't pre-assign topics to specific file numbers
    - **SCALABILITY PRINCIPLE**: Create as many LLD files as needed for comprehensive coverage - DO NOT artificially limit
    - **TOPIC SPANNING PRINCIPLE**: When a single topic requires more than 800 lines, split it across multiple files:
      - Use clear part indicators: "Topic Name - Part 1", "Topic Name - Part 2", etc.
      - Maintain logical flow and cross-references between parts
      - Example: "Security Implementation - Part 1: Authentication", "Security Implementation - Part 2: Authorization"
+   - **COVERAGE COMPLETION**: Ensure ALL required coverage areas are documented, regardless of file count
+   - **NO SHORTCUTS ALLOWED**: Do not suggest "partial completion" or "proceed with subset of coverage areas"
+   - **INCREMENTAL CREATION REQUIRED**: Use save-file (max 300 lines) + str-replace-editor (max 200 lines) to avoid input size errors
+   - **CONTENT-DRIVEN SPLITTING**: If a file exceeds 800 lines, split it logically rather than cramming content
    - LLDs should complement each other rather than duplicate content
    - Include cross-references to related content in other LLDs and research findings
    - When improvements affect multiple domains, coordinate changes across relevant LLDs
@@ -162,28 +177,34 @@ Execute the following database LLD steps:
 2. **Scalable Database LLD Structure**
    - Create numbered LLD files in working_files/design/db_lld/ based on project complexity:
    - **CRITICAL**: Create as many files as needed - DO NOT limit to 3 files
+   - **MANDATORY COMPLETION**: If you plan N database LLD files, you MUST create ALL N files before proceeding
+   - **NO PARTIAL COMPLETION**: Do not suggest moving to Module 4 with incomplete database LLD coverage
    - **Minimum Structure** (simple projects):
      - db_lld_01.md: Core schema design and basic models (up to 800 lines)
      - db_lld_02.md: Query optimization and performance (up to 800 lines)
      - db_lld_03.md: Security and backup procedures (up to 800 lines)
-   - **Extended Structure** (complex projects - CREATE AS MANY AS NEEDED):
-     - db_lld_01.md: Core schema design and table structures
-     - db_lld_02.md: Entity relationships and foreign key constraints
-     - db_lld_03.md: Data models and validation rules
-     - db_lld_04.md: Basic indexing strategies
-     - db_lld_05.md: Advanced indexing and composite indexes
-     - db_lld_06.md: Query optimization - Part 1: Basic queries and performance
-     - db_lld_07.md: Query optimization - Part 2: Complex joins and subqueries
-     - db_lld_08.md: Query optimization - Part 3: Stored procedures and functions
-     - db_lld_09.md: Security implementation - Part 1: Authentication and user management
-     - db_lld_10.md: Security implementation - Part 2: Authorization and role-based access
-     - db_lld_11.md: Security implementation - Part 3: Encryption and data protection
-     - db_lld_12.md: Backup and recovery procedures
-     - db_lld_13.md: Migration and versioning strategies
-     - db_lld_14.md: Scaling and sharding approaches
-     - db_lld_15.md: Monitoring and maintenance procedures
-     - ... (continue numbering as needed for comprehensive coverage)
-   - **TOPIC SPANNING PRINCIPLE**: When a single topic (like "Security" or "Query Optimization") requires more than 800 lines, split it into logical parts across multiple numbered files with clear part indicators
+   - **TOPIC-DRIVEN APPROACH** (complex projects - CREATE AS MANY FILES AS NEEDED):
+
+   **REQUIRED COVERAGE AREAS** (create LLD files dynamically based on content size):
+   - **Core Database Design**: Schema design, table structures, entity relationships, foreign key constraints
+   - **Data Models and Validation**: Data models, validation rules, business logic constraints
+   - **Indexing Strategies**: Basic indexing, advanced indexing, composite indexes, performance optimization
+   - **Query Optimization**: Basic queries, complex joins, subqueries, stored procedures, functions
+   - **Security Implementation**: Authentication, authorization, role-based access, encryption, data protection
+   - **Performance and Scaling**: Performance tuning, scaling strategies, sharding approaches, load balancing
+   - **Backup and Recovery**: Backup procedures, disaster recovery, data archival, restoration processes
+   - **Migration and Versioning**: Database migrations, schema versioning, upgrade procedures
+   - **Monitoring and Maintenance**: Performance monitoring, health checks, maintenance procedures, troubleshooting
+   - **Multi-Database Coordination**: (if applicable) Cross-database synchronization, data consistency, transaction management
+
+   **DYNAMIC FILE CREATION PROCESS**:
+   1. Start with first topic area and create db_lld_01.md
+   2. If content exceeds 800 lines, split into db_lld_01.md and db_lld_02.md
+   3. Move to next topic area and continue numbering (db_lld_03.md, etc.)
+   4. Split large topics across multiple files with clear part indicators
+   5. Continue until ALL required coverage areas are comprehensively documented
+
+   **TOPIC SPANNING PRINCIPLE**: When a single topic requires more than 800 lines, split it into logical parts across multiple numbered files with clear part indicators (e.g., "Query Optimization - Part 1", "Query Optimization - Part 2")
 
 3. **Parallel Database Documentation Creation**
    - For each LLD file, create corresponding user documentation in `../docs/documentation/database/`:
@@ -192,32 +213,44 @@ Execute the following database LLD steps:
      - Data management procedures
      - Troubleshooting guides
 
-4. **Database LLD Index with Scalable Topic Mapping**
+4. **Database LLD Index with Dynamic Topic Mapping**
    - Create working_files/design/db_lld/index.md with comprehensive topic mapping
-   - **CRITICAL**: List ALL created LLD files - do not limit to 3 entries
-   - Example for complex projects with topic spanning:
+   - **CRITICAL**: List ALL created LLD files based on actual content coverage
+   - **DYNAMIC APPROACH**: Update index as files are created, don't pre-assign numbers
+
+   **COVERAGE VERIFICATION**: Ensure all required areas are documented:
+   - [ ] Core Database Design (schema, tables, relationships, constraints)
+   - [ ] Data Models and Validation (models, validation rules, business logic)
+   - [ ] Indexing Strategies (basic, advanced, composite, performance)
+   - [ ] Query Optimization (basic queries, joins, subqueries, procedures)
+   - [ ] Security Implementation (authentication, authorization, encryption)
+   - [ ] Performance and Scaling (tuning, scaling, sharding, load balancing)
+   - [ ] Backup and Recovery (procedures, disaster recovery, archival)
+   - [ ] Migration and Versioning (migrations, schema versioning, upgrades)
+   - [ ] Monitoring and Maintenance (monitoring, health checks, troubleshooting)
+   - [ ] Multi-Database Coordination (if applicable - synchronization, consistency)
+
+   **EXAMPLE INDEX STRUCTURE** (actual files will vary based on content):
      ```
-     /db_lld/db_lld_01.md    {Core Schema Design, Table Structures}
-     /db_lld/db_lld_02.md    {Entity Relationships, Foreign Key Constraints}
-     /db_lld/db_lld_03.md    {Data Models, Validation Rules}
-     /db_lld/db_lld_04.md    {Basic Indexing Strategies}
-     /db_lld/db_lld_05.md    {Advanced Indexing, Composite Indexes}
-     /db_lld/db_lld_06.md    {Query Optimization - Part 1: Basic Queries}
-     /db_lld/db_lld_07.md    {Query Optimization - Part 2: Complex Joins}
-     /db_lld/db_lld_08.md    {Query Optimization - Part 3: Stored Procedures}
-     /db_lld/db_lld_09.md    {Security Implementation - Part 1: Authentication}
-     /db_lld/db_lld_10.md    {Security Implementation - Part 2: Authorization}
-     /db_lld/db_lld_11.md    {Security Implementation - Part 3: Encryption}
-     /db_lld/db_lld_12.md    {Backup and Recovery Procedures}
-     /db_lld/db_lld_13.md    {Migration and Versioning Strategies}
-     /db_lld/db_lld_14.md    {Scaling and Sharding Approaches}
-     /db_lld/db_lld_15.md    {Monitoring and Maintenance Procedures}
-     ... (continue listing all created files)
+     # Database LLD Index
+
+     ## Coverage Areas and Files
+     /db_lld/db_lld_01.md    {Core Schema Design - User Tables}
+     /db_lld/db_lld_02.md    {Core Schema Design - Game Tables}
+     /db_lld/db_lld_03.md    {Entity Relationships and Constraints}
+     /db_lld/db_lld_04.md    {Data Models and Validation Rules}
+     /db_lld/db_lld_05.md    {Indexing Strategies - Part 1: Basic Indexes}
+     /db_lld/db_lld_06.md    {Indexing Strategies - Part 2: Advanced Patterns}
+     ... (continue based on actual content created)
+
+     ## Coverage Verification
+     ✅ Core Database Design: Files 01-03
+     ✅ Data Models: File 04
+     ✅ Indexing: Files 05-06
+     ... (update as files are created)
      ```
-   - **SPANNING DOCUMENTATION**: When topics span multiple files, clearly indicate the relationship:
-     - Use "Part 1", "Part 2", "Part 3" naming for related content
-     - Include cross-references between related files
-     - Maintain logical flow across the spanning files
+
+   - **SPANNING DOCUMENTATION**: When topics span multiple files, clearly indicate the relationship
    - Include cross-references to related LLD files in other domains
    - Link to corresponding application documentation in ../docs/documentation/database/
 
@@ -410,6 +443,14 @@ Before proceeding to Module 4, verify that all LLD deliverables are complete:
 
 **MANDATORY**: If any LLD deliverable is missing or incomplete, repeat the relevant LLD creation steps. All subsequent modules MUST reference and build upon these LLD outputs and use the documentation system as the primary reference.
 
+**🚨 CRITICAL COMPLETION ENFORCEMENT**:
+- **VERIFY ALL COVERAGE AREAS ARE DOCUMENTED**: Check that every required coverage area has comprehensive documentation
+- **NO PARTIAL COVERAGE ALLOWED**: All required coverage areas must be fully documented across however many files needed
+- **NO SHORTCUTS TO MODULE 4**: Module 3 is NOT complete until every coverage area is comprehensively documented
+- **USE INCREMENTAL CREATION**: If hitting "tool input too large" errors, use save-file + str-replace-editor approach
+- **CONTENT-DRIVEN FILE COUNT**: File count should be determined by content needs, not pre-assigned numbers
+- **MANDATORY COVERAGE RECHECK**: Before marking Module 3 complete, verify every required coverage area is comprehensively documented
+
 **GAP IDENTIFICATION REQUIREMENT**: During LLD creation, identify any gaps in technical specifications or missing details. Document these gaps for resolution in Module 4. Major gaps that prevent comprehensive LLD creation MUST be resolved immediately using research tools (`brave_web_search`, `Context7`) before marking Module 3 as complete.
 
 ## Output Files
@@ -421,4 +462,31 @@ Before proceeding to Module 4, verify that all LLD deliverables are complete:
 - Self-referencing documentation system
 
 ## Next Module
-Upon successful completion and validation, proceed to Module 4: Task and Gap Management.
+
+**🚨 CRITICAL: Module 3 Completion Verification Required**
+
+Before proceeding to Module 4, you MUST verify:
+- **ALL COVERAGE AREAS ARE DOCUMENTED**: Every required coverage area has comprehensive documentation
+- **NO MISSING COVERAGE**: All required topics are fully documented across however many files needed
+- **PROPER FILE SIZES**: Each LLD file should be 600-800 lines with comprehensive coverage (split if larger)
+- **NO SHORTCUTS TAKEN**: Do not proceed with "partial coverage" or "subset of required areas"
+
+**MANDATORY COVERAGE VERIFICATION**:
+1. **Database Domain**: Verify ALL required coverage areas are comprehensively documented:
+   - [ ] Core Database Design (schema, tables, relationships, constraints)
+   - [ ] Data Models and Validation (models, validation rules, business logic)
+   - [ ] Indexing Strategies (basic, advanced, composite, performance)
+   - [ ] Query Optimization (basic queries, joins, subqueries, procedures)
+   - [ ] Security Implementation (authentication, authorization, encryption)
+   - [ ] Performance and Scaling (tuning, scaling, sharding, load balancing)
+   - [ ] Backup and Recovery (procedures, disaster recovery, archival)
+   - [ ] Migration and Versioning (migrations, schema versioning, upgrades)
+   - [ ] Monitoring and Maintenance (monitoring, health checks, troubleshooting)
+   - [ ] Multi-Database Coordination (if applicable)
+
+2. **DevOps Domain**: Verify ALL required coverage areas are documented
+3. **Frontend Domain**: Verify ALL required coverage areas are documented
+4. **Backend Domain**: Verify ALL required coverage areas are documented
+5. **Testing Domain**: Verify ALL required coverage areas are documented
+
+**ONLY AFTER 100% LLD COMPLETION**: Proceed to Module 4: Task and Gap Management.

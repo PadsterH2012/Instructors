@@ -86,13 +86,16 @@ All instruction modules are located in the `instruction_modules/` folder relativ
 3. **LLD Structure and Creation (MANDATORY)**
    - File: `instruction_modules/module_lld_structure_creation.md`
    - Description: Consolidated LLD structure with parallel application documentation and self-referencing system
+   - **🚨 CRITICAL**: Create ALL planned LLD files (10-19 per domain) - NO shortcuts to Module 4 allowed
+   - **COMPLETION REQUIREMENT**: 100% of planned LLD files must exist before proceeding to Module 4
    - Prerequisites: Documentation Development completion
    - Outputs: ../../project_working_files/working_files/design/ (consolidated LLD files), ../../project_working_files/docs/documentation/ (application docs)
 
 4. **Task and Gap Management (MANDATORY)**
    - File: `instruction_modules/module_task_gap_management.md`
    - Description: Documentation subtask management, iterative development loops, feature management, and **mandatory gap resolution**
-   - Prerequisites: LLD Structure and Creation in progress
+   - **🚨 CRITICAL PREREQUISITE**: Module 3 must be 100% COMPLETE (ALL planned LLD files created)
+   - Prerequisites: LLD Structure and Creation 100% completion (NOT just "in progress")
    - Outputs: temp_tasks.md, feature_list.md, missing_detail.md, gap_resolution_research.md, **resolved gaps**
 
 5. **Validation and Planning (MANDATORY)**
