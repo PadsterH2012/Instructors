@@ -5,8 +5,6 @@
 ```
 project_root/                      # 🎯 PROJECT ROOT - Where you run git init
 ├── .gitignore                     # 🚫 GIT EXCLUSIONS - Created by Module 0 at root level
-├── simulate/                      # 🎭 SIMULATE MODE - Instruction system infrastructure (excluded from git)
-│   └── simulate_log.md           # Simulate mode execution logs
 ├── project_instructions/          # 🔒 PROTECTED - Never modified during execution
 │   ├── instruction_modules/       # Core instruction modules (9 modules)
 │   ├── project_input/            # Protected input files
@@ -26,6 +24,12 @@ project_root/                      # 🎯 PROJECT ROOT - Where you run git init
 │   │   ├── simulate-mode.md      # Simulation system
 │   │   ├── debug-options.md      # Debug and troubleshooting
 │   │   └── troubleshooting.md    # Common issues and solutions
+│   ├── simulate/                 # 🎭 SIMULATE MODE - Instruction system infrastructure
+│   │   ├── README.md             # Simulation system overview
+│   │   ├── simulate_log.md       # Simulation execution logs
+│   │   ├── simulation_scorecard.md # Performance tracking for last 15 runs
+│   │   ├── simulation_analytics.md # Visual analytics and insights
+│   │   └── generate_visualizations.py # Chart generation script
 │   └── README.md                 # Main user guide with navigation
 ├── project_working_files/        # 🗑️ SAFE TO DELETE - All agent-generated content
 │   ├── status.md                 # Status tracking and resume capability
@@ -74,11 +78,11 @@ project_root/                      # 🎯 PROJECT ROOT - Where you run git init
 
 ### 🎭 Infrastructure Areas
 
-**`simulate/`**
+**`project_instructions/simulate/`**
 - Simulate mode logs and infrastructure
 - Part of instruction system infrastructure
 - Excluded from project repository via .gitignore
-- Contains simulation execution logs
+- Contains simulation execution logs, analytics, and visualization tools
 
 ## File Organization Rules
 
@@ -108,7 +112,7 @@ The system automatically creates a comprehensive .gitignore file:
 project_instructions/
 
 # Simulate mode logs (instruction system infrastructure)
-simulate/
+project_instructions/simulate/
 
 # Archive and temporary files
 archivebin/
@@ -215,7 +219,7 @@ env/
 **What Gets Excluded**:
 - Instruction system (project_instructions/)
 - Working files (project_working_files/)
-- Simulate logs (simulate/)
+- Simulate logs (project_instructions/simulate/)
 - Archive files (archivebin/)
 - Temporary and system files
 

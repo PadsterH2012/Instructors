@@ -405,7 +405,7 @@ Before marking Module 8 as COMPLETED, verify:
 - Updated documentation in docs/ with implementation details
 - Updated STATUS_README.md with final progress
 
-**SIMULATE MODE REQUIREMENT**: If simulate mode enabled, create ../../simulate/simulate_log.md and log all actions that would be performed:
+**SIMULATE MODE REQUIREMENT**: If simulate mode enabled, create ../simulate/simulate_log.md and log all actions that would be performed:
 - **Level Detection**: Determine simulation level (1-9) from project context or user specification
 - **Switch Detection**: Check for simulation switches (--simulate-testing, --simulate-debug, --simulate-upgrade, --simulate-deployment)
 - **Log Format**: YYYY-MM-DD HH:MM:SS | SIMULATE | LEVEL | ACTION_TYPE | DESCRIPTION
@@ -413,13 +413,13 @@ Before marking Module 8 as COMPLETED, verify:
 - **Operation Complexity**: Scale operations based on level (basic → medium → intensive)
 - **Switch Operations**: Include additional operation types based on enabled switches
 - **Accuracy Tracking**: After actual execution, assess simulation accuracy per phase/module using the accuracy assessment format
-- Create ../../simulate/ directory if it doesn't exist
+- Create ../simulate/ directory if it doesn't exist
 - Use simulate_log_template.md from project_instructions/templates/ as starting point
 
 **POST-EXECUTION ACCURACY ASSESSMENT**: After completing actual Module 8 execution, if simulation was performed:
 - Compare actual execution to simulated predictions for each phase
 - Assess accuracy in 5 categories: File Operations, Command Execution, API Calls, Time Estimates, Issue Prediction
-- Add accuracy assessment to ../../simulate/simulate_log.md using the standard format
+- Add accuracy assessment to ../simulate/simulate_log.md using the standard format
 - Include overall accuracy percentage and detailed category breakdowns
 - Note any significant deviations between simulation and actual execution
 

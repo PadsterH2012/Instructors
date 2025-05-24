@@ -4,11 +4,16 @@
 This file logs all actions that would be performed in simulate mode without actually executing them.
 
 ## Simulation Configuration
-**Level**: [1-9] (1=Basic, 5=Medium, 9=Intensive)
+**Run ID**: [Auto-increment from scorecard, e.g., Run #16]
+**Mode**: [Standard | Logic-Only]
+**Level**: [1-9] (1=Basic, 5=Medium, 9=Intensive) - Only for Standard mode
 **Switches**: [--simulate-testing, --simulate-debug, --simulate-upgrade, --simulate-deployment]
 **Project Type**: [Detected from project context or specified]
 **Working Directory**: [Full path where agent is executing - MUST be established at start]
 **Project Root**: [Full path to project root directory]
+**Start Time**: [YYYY-MM-DD HH:MM:SS TZ - from date command at startup]
+**Estimated Duration**: [Based on level and switches]
+**Project Size**: [Estimated file count]
 
 ## Simulation Levels
 - **Level 1-3**: Basic projects (static sites, simple apps, basic auth)
@@ -16,8 +21,15 @@ This file logs all actions that would be performed in simulate mode without actu
 - **Level 7-9**: Intensive projects (enterprise systems, full testing, production-ready)
 
 ## Log Format
+
+### Standard Simulation
 ```
 YYYY-MM-DD HH:MM:SS | SIMULATE | LEVEL | ACTION_TYPE | FULL_COMMAND_OR_OPERATION
+```
+
+### Logic-Only Mode (--simulate-logic-only)
+```
+YYYY-MM-DD HH:MM:SS | LOGIC | MODULE | DECISION_POINT | OUTCOME
 ```
 
 ## Action Types with Full Command Examples
@@ -134,6 +146,32 @@ Assessment Date: 2024-12-19
 ## Simulation Log Entries
 
 [Simulation entries will be appended here during simulate mode execution]
+
+---
+
+## Simulation Summary
+
+**Actual Duration**: [HH:MM - filled after completion]
+**Total Operations**: [Count of simulated operations]
+**API Calls Made**: [Count of research/Context7 calls]
+**Issues Predicted**: [Count of potential issues identified]
+**Complexity Factors**: [List of factors that increased complexity]
+
+---
+
+## Scorecard Integration
+
+**Auto-Update Instructions**:
+1. After simulation completion, extract key metrics
+2. Update `project_instructions/simulate/simulation_scorecard.md` with new run data
+3. Remove oldest run if exceeding 15 entries
+4. Recalculate statistics and trends
+5. Update `project_instructions/simulate/simulation_analytics.md` with new patterns
+
+**Scorecard Entry Template**:
+```
+| [Run#] | [Date] | [Time] | [Level] | [Switches] | [Project Type] | [Score%] | [Status] |
+```
 
 ---
 

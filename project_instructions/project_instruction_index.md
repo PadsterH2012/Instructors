@@ -33,11 +33,13 @@
 - CLEAR SEPARATION: Complete isolation between instruction system and generated content
 - INPUT PROTECTION: project_plan.txt moved to project_input/ within project_instructions for safety
 
-**WORKING DIRECTORY ESTABLISHMENT REQUIREMENT**:
-- Agents MUST establish and log their current working directory (pwd) at the start of execution
-- This working directory context is CRITICAL for accurate relative path calculations
-- All file operations and command executions depend on this established working directory
-- Log the full path (e.g., `/home/user/ProjectA`) for reference throughout execution
+**WORKING DIRECTORY AND DATE/TIME ESTABLISHMENT REQUIREMENT**:
+- Agents MUST establish and log their current working directory (pwd) AND current date/time at the start of execution
+- Execute these commands immediately upon startup: `pwd` and `date '+%Y-%m-%d %H:%M:%S %Z'`
+- This working directory and timestamp context is CRITICAL for accurate relative path calculations and research context
+- All file operations, command executions, and API calls depend on this established context
+- Log the full path (e.g., `/home/user/ProjectA`) and timestamp for reference throughout execution
+- **SIMULATION MODE**: This requirement applies to ALL modes including simulation - agents must know current date/time for accurate simulation logging
 
 **DEBUG MODE REQUIREMENT**:
 - If the user provides "--debug" flag, agents MUST enable comprehensive debug logging
@@ -47,8 +49,10 @@
 
 **SIMULATE MODE REQUIREMENT**:
 - If the user provides "--simulate" flag, agents MUST enable simulation mode
+- If the user provides "--simulate-logic-only" flag, agents MUST enable logic-only mode (file-free, 90% faster)
 - Simulation mode logs all actions that would be performed without executing them
-- Simulation logs are written to "../../simulate/simulate_log.md" with full command paths
+- Logic-only mode logs only module transitions and key decisions (no file operations)
+- Simulation logs are written to "../simulate/simulate_log.md" with full command paths
 - Simulation mode includes level detection (1-9) and switch processing for targeted testing
 
 ---

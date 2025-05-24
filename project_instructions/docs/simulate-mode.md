@@ -18,8 +18,15 @@ Follow the instructions in project_instructions/project_instruction_index.md and
 Follow the instructions in project_instructions/project_instruction_index.md and resume from current status.
 
 --simulate-basic     # Level 1-3: Simple projects
---simulate-medium    # Level 4-6: Complex projects  
+--simulate-medium    # Level 4-6: Complex projects
 --simulate-intensive # Level 7-9: Enterprise projects
+```
+
+### File-Free Logic Testing
+```
+Follow the instructions in project_instructions/project_instruction_index.md and resume from current status.
+
+--simulate-logic-only    # Pure logic flow testing - no file operations
 ```
 
 ### Switch-Based Simulation
@@ -46,6 +53,13 @@ Follow the instructions in project_instructions/project_instruction_index.md and
 - **Level 8**: Enterprise system with full testing suite - 3 API calls
 - **Level 9**: Production-ready with CI/CD, monitoring, scaling - 3 API calls
 
+### Logic-Only Mode
+- **File-Free**: No file operations, directory creation, or path logging
+- **Decision Focus**: Only module transitions and key decision points
+- **Mock Responses**: No actual API calls - uses cached/mock responses
+- **Flow Validation**: Tests instruction logic flow without implementation details
+- **Speed**: 90% faster than standard simulation
+
 ## Simulation Switches
 
 ### Feature Switches
@@ -64,6 +78,11 @@ Follow the instructions in project_instructions/project_instruction_index.md and
 ### Enhanced Command Logging
 ```
 YYYY-MM-DD HH:MM:SS | SIMULATE | LEVEL | ACTION_TYPE | FULL_COMMAND_OR_OPERATION
+```
+
+### Logic-Only Logging (--simulate-logic-only)
+```
+YYYY-MM-DD HH:MM:SS | LOGIC | MODULE | DECISION_POINT | OUTCOME
 ```
 
 ### Action Types with Full Command Examples
@@ -113,6 +132,27 @@ Working Directory: `/home/user/ProjectA`
 2024-12-19 14:40:28 | SIMULATE | L9 | RESEARCH | brave_web_search: "Enterprise scaling patterns 2024" (for /home/user/ProjectA/enterprise-system production deployment)
 ```
 
+### Logic-Only Mode (--simulate-logic-only)
+Working Directory: `/home/user/ProjectA`
+```
+2024-12-19 14:30:00 | LOGIC | M0 | START | Initial Setup module initiated
+2024-12-19 14:30:01 | LOGIC | M0 | VALIDATE | Project plan found and validated
+2024-12-19 14:30:02 | LOGIC | M0 | DECISION | Docker-based project detected → Create container structure
+2024-12-19 14:30:03 | LOGIC | M0 | COMPLETE | Module 0 completed → Proceed to Module 1
+2024-12-19 14:30:04 | LOGIC | M1 | START | Research Phase initiated
+2024-12-19 14:30:05 | LOGIC | M1 | DECISION | Family communication app → Research WebRTC + messaging
+2024-12-19 14:30:06 | LOGIC | M1 | MOCK_API | Simulated research: WebRTC best practices (cached response)
+2024-12-19 14:30:07 | LOGIC | M1 | DECISION | Child-friendly UI required → Research accessibility patterns
+2024-12-19 14:30:08 | LOGIC | M1 | COMPLETE | Module 1 completed → Proceed to Module 2
+2024-12-19 14:30:09 | LOGIC | M2 | START | Documentation Development initiated
+2024-12-19 14:30:10 | LOGIC | M2 | DECISION | Minecraft theme + security → Document scope constraints
+2024-12-19 14:30:11 | LOGIC | M2 | COMPLETE | Module 2 completed → Proceed to Module 3
+2024-12-19 14:30:12 | LOGIC | M3 | START | LLD Structure and Creation initiated
+2024-12-19 14:30:13 | LOGIC | M3 | DECISION | Audio system complexity → Create separate audio_system_lld.md
+2024-12-19 14:30:14 | LOGIC | M3 | DECISION | Security requirements → Create security_encryption_lld.md
+2024-12-19 14:30:15 | LOGIC | M3 | COMPLETE | Module 3 completed → Proceed to Module 4
+```
+
 ## Simulation Configuration
 
 ### Required Context
@@ -125,14 +165,17 @@ Working Directory: [Full path where agent is executing - MUST be established at 
 Project Root: [Full path to project root directory]
 ```
 
-### Working Directory Establishment
-- Agents MUST establish and log their current working directory (pwd) at the start of execution
-- This working directory context is CRITICAL for accurate relative path calculations
-- All file operations and command executions depend on this established working directory
-- Log the full path (e.g., `/home/user/ProjectA`) for reference throughout execution
+### Working Directory and Date/Time Establishment
+- Agents MUST establish and log their current working directory (pwd) AND current date/time at the start of execution
+- Execute these commands immediately upon startup: `pwd` and `date '+%Y-%m-%d %H:%M:%S %Z'`
+- This working directory and timestamp context is CRITICAL for accurate relative path calculations and research context
+- All file operations, command executions, and API calls depend on this established context
+- Log the full path (e.g., `/home/user/ProjectA`) and timestamp for reference throughout execution
+- **SIMULATION REQUIREMENT**: This applies to ALL simulation modes - agents must know current date/time for accurate logging
 
 ## Simulate Mode Rules
 
+### Standard Simulation
 - ✅ **API calls scale with level**: L1-3 (1 call), L4-6 (2 calls), L7-9 (3 calls)
 - ✅ **Operations complexity increases** with level
 - ✅ **Switches add specific operation types** to simulation
@@ -140,6 +183,13 @@ Project Root: [Full path to project root directory]
 - ✅ **Level and timestamp-based** logging format
 - ✅ **Full command paths** with working directory context
 - ✅ **Executable commands** that could be run directly
+
+### Logic-Only Mode (--simulate-logic-only)
+- ✅ **No file operations** - Skip all mkdir, touch, cp, mv commands
+- ✅ **No API calls** - Use mock/cached responses only
+- ✅ **Decision focus** - Log only module transitions and key decisions
+- ✅ **90% faster** - Minimal logging overhead
+- ✅ **Pure logic testing** - Validate instruction flow without implementation details
 
 ## Accuracy Tracking System
 
@@ -197,12 +247,63 @@ Assessment Date: 2024-12-19
 - ✅ **Build confidence** in simulation predictions over time
 - ✅ **Optimize instruction logic** based on accuracy patterns
 
-## File Location
+## Enhanced Tracking System
 
-**Simulation logs are stored in**: `simulate/simulate_log.md`
+### File Locations
 
-This location is:
-- Part of instruction system infrastructure
-- Excluded from project repository via .gitignore
-- Separate from project development files
-- Easy to access for review and analysis
+**Primary Files**:
+- `project_instructions/simulate/simulate_log.md` - Individual simulation run logs
+- `project_instructions/simulate/simulation_scorecard.md` - Performance tracking for last 15 runs
+- `project_instructions/simulate/simulation_analytics.md` - Visual analytics and insights
+- `project_instructions/simulate/generate_visualizations.py` - Chart generation script
+
+**Generated Charts** (when visualization script is run):
+- `project_instructions/simulate/charts/accuracy_trend.png` - Performance trends over time
+- `project_instructions/simulate/charts/performance_by_level.png` - Performance by complexity level
+- `project_instructions/simulate/charts/issue_heatmap.png` - Issue patterns visualization
+- `project_instructions/simulate/charts/project_size_scatter.png` - Project size vs accuracy correlation
+- `project_instructions/simulate/charts/switch_performance_radar.png` - Switch performance comparison
+
+### Scorecard Features
+
+**Automatic Tracking**:
+- Last 15 simulation runs with detailed metrics
+- Performance trends and statistics
+- Success rate and score distribution
+- Performance analysis by complexity level and switch type
+
+**Key Metrics**:
+- Overall accuracy percentage
+- Category breakdown (File Ops, Commands, API Calls, Time Estimates, Issue Prediction)
+- Project size correlation
+- Switch combination effectiveness
+
+### Analytics and Visualization
+
+**Visual Analytics**:
+- Trend analysis showing improvement patterns
+- Heatmaps identifying problem areas
+- Scatter plots revealing correlations
+- Radar charts comparing switch performance
+
+**Predictive Insights**:
+- Success probability models
+- Risk factor identification
+- Improvement recommendations
+- Pattern recognition for optimization
+
+### Integration Process
+
+**After Each Simulation**:
+1. Extract metrics from simulation log
+2. Update scorecard with new run data
+3. Maintain rolling 15-run window
+4. Recalculate statistics and trends
+5. Generate updated analytics
+6. Optionally run visualization script for charts
+
+This enhanced system provides:
+- ✅ **Comprehensive tracking** of simulation performance
+- ✅ **Visual insights** into patterns and trends
+- ✅ **Predictive analytics** for future simulations
+- ✅ **Continuous improvement** through data-driven insights
