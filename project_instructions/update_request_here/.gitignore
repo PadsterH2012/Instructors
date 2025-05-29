@@ -1,0 +1,56 @@
+# Update Request Directory .gitignore
+
+# Purpose: This directory is for submitting update requests to the project instruction system
+# These files should typically not be committed to version control
+
+# Update request files
+*.md
+*.txt
+*.json
+*.yaml
+*.yml
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Archive files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Exception: Keep README files for documentation
+!README.md
+!readme.md
+!README.txt
+
+# Exception: Keep template files
+!*template*
+!*TEMPLATE*
+!update_request_template.txt
+
+# Exception: Keep example files
+!*example*
+!*EXAMPLE*

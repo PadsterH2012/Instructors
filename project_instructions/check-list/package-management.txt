@@ -1,0 +1,139 @@
+# Package Management Validation
+#
+# Purpose: Validate package management practices and dependency handling
+# Scope: Package manager usage, dependency management, version control, manual editing prevention
+# Application: Applied during Module 8 and any dependency management activities
+# Conditional Logic: Rules apply based on project technology choices and development environment
+
+# ============================================================================
+# UNIVERSAL PACKAGE MANAGEMENT RULES (ALL PROJECTS)
+# ============================================================================
+
+## Package Manager Usage Enforcement (Universal)
+- Package Manager Usage | Dependencies Installed via Package Managers, NOT Manual File Editing | True/False
+- Manual File Editing | Agent Does NOT Manually Edit package.json, requirements.txt, etc. | False/True (inverted)
+- Correct Commands | Agent Uses Correct Package Manager Commands for Each Language | True/False
+- Version Resolution | Package Managers Handle Version Resolution and Dependency Conflicts | True/False
+- Lock File Updates | Package Managers Update Lock Files Automatically | True/False
+
+# ============================================================================
+# CONDITIONAL PACKAGE MANAGEMENT RULES (TECHNOLOGY-SPECIFIC)
+# ============================================================================
+
+## Docker-Based Development (IF Docker containers are used)
+- Container Package Management | Package management performed within Docker containers | True/False
+- Direct Container Installation | Agent Does NOT Install Packages Directly in Running Containers | False/True (inverted)
+- Requirements File Workflow | All Package Additions Go Through requirements.txt → Rebuild Process | True/False
+- Container State Consistency | Container State Matches Dependency Files Exactly | True/False
+- No Temporary Installations | No Temporary Package Installations That Bypass Rebuild | False/True (inverted)
+
+## Local Development (IF local/native development environment)
+- Virtual Environment Usage | Virtual environments (venv, conda, etc.) used for isolation | True/False
+- System Protection | Host system protected from development package installations | True/False
+- Environment Documentation | Development environment setup clearly documented | True/False
+- Dependency Isolation | Project dependencies isolated from system packages | True/False
+- Reproducible Setup | Environment can be reproduced from dependency files | True/False
+
+## Language-Specific Package Management
+- JavaScript/Node.js | npm install, npm uninstall, yarn add, yarn remove, or pnpm commands used | True/False
+- Python | pip install, pip uninstall, poetry add, poetry remove, or conda commands used | True/False
+- Rust | cargo add, cargo remove commands used (Cargo 1.62+) | True/False
+- Go | go get, go mod tidy commands used | True/False
+- Ruby | gem install, bundle add, bundle remove commands used | True/False
+- PHP | composer require, composer remove commands used | True/False
+- C#/.NET | dotnet add package, dotnet remove package commands used | True/False
+- Java | Maven or Gradle dependency commands used | True/False
+
+## Package Management Best Practices
+- Dependency Resolution | Package managers handle dependency resolution automatically | True/False
+- Version Compatibility | Package managers verify version compatibility | True/False
+- Conflict Resolution | Package managers resolve dependency conflicts | True/False
+- Lock File Maintenance | Lock files maintained automatically by package managers | True/False
+- Environment Consistency | Package management ensures consistent environments | True/False
+
+## Manual Editing Prevention
+- Package File Protection | package.json, requirements.txt, Cargo.toml, etc. NOT manually edited | True/False
+- Configuration Separation | Package configuration separated from manual configuration | True/False
+- Tool-Based Changes | All dependency changes made through appropriate tools | True/False
+- Version Specification | Version specifications handled through package manager commands | True/False
+- Dependency Addition | New dependencies added through package manager commands only | True/False
+
+## CI/CD Integration (IF automated deployment pipelines used)
+- Pipeline Package Management | Package management integrated into CI/CD pipelines | True/False
+- Build Reproducibility | Builds reproducible across different pipeline environments | True/False
+- Dependency Caching | Package dependencies cached appropriately in pipelines | True/False
+- Security Scanning | Package security scanning integrated into pipelines | True/False
+- Deployment Consistency | Package versions consistent between build and deployment | True/False
+
+## Quality Assurance
+- Dependency Validation | All dependencies validated through package managers | True/False
+- Security Scanning | Package managers perform security scanning when available | True/False
+- Update Management | Package updates managed through package manager commands | True/False
+- Audit Capabilities | Package managers provide audit capabilities for security | True/False
+- Reproducible Builds | Package management enables reproducible builds | True/False
+
+## Error Handling and Recovery
+- Installation Failures | Package installation failures handled gracefully | True/False
+- Conflict Resolution | Dependency conflicts resolved through package manager tools | True/False
+- Rollback Capability | Package changes can be rolled back through package managers | True/False
+- Error Reporting | Package management errors properly reported and logged | True/False
+- Recovery Procedures | Clear recovery procedures for package management issues | True/False
+
+# ============================================================================
+# PACKAGE MANAGEMENT VALIDATION INSTRUCTIONS
+# ============================================================================
+
+## Validation Process:
+1. **Project Environment Detection**: Identify if project uses Docker, local development, or hybrid approach
+2. **Universal Rule Verification**: Verify package managers used for all dependency operations (all projects)
+3. **Conditional Rule Application**: Apply technology-specific rules based on project environment
+4. **Manual Editing Prevention**: Confirm no manual editing of package configuration files (all projects)
+5. **Environment-Specific Testing**: Test package management integration with chosen development environment
+
+## Expected Results:
+- **Universal Compliance**: All projects follow core package management principles
+- **Environment-Appropriate**: Package management approach matches project environment
+- **No Manual Editing**: No manual editing of package configuration files
+- **Reliable Dependencies**: Dependency management reliable and reproducible in chosen environment
+
+## Critical Requirements:
+- **UNIVERSAL BLOCKING**: Manual editing of package files must be prevented (all projects)
+- **UNIVERSAL ENFORCEMENT**: Package manager usage must be enforced for all dependency operations (all projects)
+- **ENVIRONMENT CONSISTENCY**: Package management approach must be consistent within chosen environment
+- **CONDITIONAL INTEGRATION**: Package management must integrate properly with chosen development environment
+
+## Environment-Specific Requirements:
+- **IF Docker Used**: No direct container installations, must use rebuild workflow
+- **IF Local Development**: Must use virtual environments or proper isolation
+- **IF CI/CD Pipelines**: Must ensure reproducible builds across environments
+- **IF Hybrid Approach**: Must document environment boundaries and package management strategy
+
+## Exception Handling:
+- **Complex Configuration**: Manual editing only allowed for complex configuration that cannot be accomplished through package manager commands
+- **Documentation Required**: Any exceptions must be clearly documented with rationale and environment context
+- **Review Required**: Manual configuration changes require review and validation
+
+# ============================================================================
+# VALIDATION INSTRUCTIONS
+# ============================================================================
+
+## Critical Tests (Must Pass):
+- All universal package manager usage tests (ensure tools used instead of manual editing - all projects)
+- All language-specific tests (ensure correct commands for each language - all projects)
+- All conditional environment tests (ensure proper integration with chosen development environment)
+
+## Expected Results:
+- **Universal Compliance**: All dependencies managed through package managers (all projects)
+- **No Manual Editing**: Package configuration files not manually edited (all projects)
+- **Environment-Appropriate Integration**: Package management properly integrated with chosen development environment
+- **Reliable Dependencies**: Dependency management reliable and reproducible in chosen environment
+
+## Test Distribution:
+- **Universal Tests**: 15 tests (apply to all projects)
+- **Docker-Specific Tests**: 5 tests (apply only if Docker used)
+- **Local Development Tests**: 5 tests (apply only if local development used)
+- **CI/CD Tests**: 5 tests (apply only if automated pipelines used)
+
+## Total Package Management Tests: 30 (15 universal + up to 15 conditional based on environment)
+## Expected Pass Rate: 100% (All applicable tests critical for reliable dependency management)
+## Impact Level: HIGH (Package management affects build reliability and security)

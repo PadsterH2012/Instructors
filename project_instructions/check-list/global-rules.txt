@@ -1,0 +1,92 @@
+# Global Enforcement Rules Validation
+#
+# Purpose: Validate global rules that apply at ALL module boundaries
+# Scope: Rules that must be enforced consistently across the entire system
+# Blocking: ALL global rule failures MUST prevent module progression
+
+# ============================================================================
+# GLOBAL ENFORCEMENT CHECKPOINTS - MANDATORY AT ALL MODULE BOUNDARIES
+# ============================================================================
+
+## 🚨 CRITICAL: Global Rule Enforcement Protocol
+
+**MANDATORY VALIDATION POINTS**:
+- **MODULE START**: Validate ALL global rules before module execution begins
+- **MODULE COMPLETION**: Verify ALL global rules before marking module complete
+- **RESUME/RESTART**: Re-validate ALL global rules when resuming work
+- **STATUS UPDATES**: Confirm global rule compliance before status changes
+
+**ENFORCEMENT REQUIREMENT**:
+- Agents MUST pass ALL global rule validations before proceeding
+- ANY global rule failure MUST block module progression
+- Global rule violations MUST be corrected before continuing
+- NO exceptions or bypasses allowed for global rule enforcement
+
+## File Creation and Management (ENFORCED AT EVERY MODULE BOUNDARY)
+- Large File Creation Attempted | Incremental Creation Used (save-file + str-replace-editor) | True/False
+- File Size Exceeds Limits | Content Split Logically Rather Than Cramming | True/False
+- Tool Input Too Large Error | Agent Uses Incremental Approach Instead of Failing | True/False
+- **CHECKPOINT**: Validate file creation compliance from previous modules | True/False
+
+## Module Transition Controls (ENFORCED AT EVERY MODULE BOUNDARY)
+- Module Completion Claimed | Previous Module 100% Complete Before Starting Next | True/False
+- Agent Suggests Shortcuts | "Partial Completion" or "Proceed with Subset" Rejected | False/True (inverted)
+- Module Prerequisites | All Required Deliverables from Previous Modules Exist | True/False
+- **CHECKPOINT**: Verify 100% completion before next module start | True/False
+
+## Documentation System Integrity (ENFORCED AT EVERY MODULE BOUNDARY)
+- Design Decision Made | Existing Documentation Checked as Primary Reference | True/False
+- New Component Created | Consistency with Documented Standards Maintained | True/False
+- Documentation Updated | Cross-References Between Domains Updated | True/False
+- **CHECKPOINT**: Validate cross-module documentation consistency | True/False
+
+## Error Handling and Recovery (ENFORCED AT EVERY MODULE BOUNDARY)
+- Process Interruption | Agent Asks for Help Instead of Infinite Loops | True/False
+- Repeated Tool Calls | Agent Recognizes Circular Behavior and Seeks Assistance | True/False
+- Missing Information | Research Tools Used Before Making Assumptions | True/False
+- **CHECKPOINT**: Confirm error handling protocols active | True/False
+
+## Cross-Module Validation (ENFORCED AT EVERY MODULE BOUNDARY)
+- Research Integration | Research Findings Propagated to Current Module | True/False
+- Technology Consistency | Technology Decisions Consistent Across Modules | True/False
+- File Path Validation | All File Paths Calculated Relative to Working Directory | True/False
+- Status Consistency | Status File Accurately Reflects Current State | True/False
+- **CHECKPOINT**: Status file validated against actual deliverables at module boundaries | True/False
+- Quality Standards | Content Quality Standards Maintained Across Modules | True/False
+
+# ============================================================================
+# GLOBAL RULE VALIDATION INSTRUCTIONS
+# ============================================================================
+
+## Validation Process:
+1. **Pre-Module Validation**: Run ALL global rule tests before starting any module
+2. **Mid-Module Monitoring**: Verify global rule compliance during module execution
+3. **Post-Module Validation**: Confirm ALL global rules maintained before module completion
+4. **Resume Validation**: Re-validate ALL global rules when resuming work
+
+## Failure Handling:
+- **BLOCKING**: Any global rule failure prevents module progression
+- **CORRECTION**: All violations must be corrected before continuing
+- **DOCUMENTATION**: Record all global rule violations and corrections
+- **PREVENTION**: Implement safeguards to prevent future violations
+
+## Expected Results:
+- **100% Compliance**: All global rules must pass for system integrity
+- **Consistent Enforcement**: Rules applied equally across all modules
+- **Systematic Validation**: Regular checkpoints ensure ongoing compliance
+- **Quality Assurance**: Global rules maintain system-wide quality standards
+
+# ============================================================================
+# REFERENCE MAPPING
+# ============================================================================
+
+## Instruction File References:
+- File Creation: CRITICAL_READ_FIRST.md, micro_task_framework_v2.md
+- Module Transitions: module_resume_system.md, status.md templates
+- Documentation: All module documentation requirements
+- Error Handling: Task breakdown system, CRITICAL_READ_FIRST.md
+- Cross-Module: Research integration, technology consistency requirements
+
+## Total Global Rule Tests: 22
+## Expected Pass Rate: 100% (All tests must pass)
+## Blocking Level: CRITICAL (Failures prevent system operation)

@@ -1,0 +1,87 @@
+UPDATE REQUEST: [Brief Title - Replace with descriptive title]
+
+DESCRIPTION:
+[Provide detailed description of what needs to be changed, added, or fixed in the project instruction system. Be specific about the current state and desired future state.]
+
+AFFECTED MODULES:
+[List which instruction modules will be impacted by this change. Examples:]
+- module_initial_setup.md
+- module_research_phase.md
+- module_development_implementation.md
+- templates/[template_name].md
+- docs/[documentation_file].md
+
+SPECIFIC CHANGES REQUIRED:
+1. [Specific change 1 - be detailed about what needs to be modified]
+2. [Specific change 2 - include file locations and section names if known]
+3. [Specific change 3 - describe new content that needs to be added]
+4. [Add more items as needed]
+
+RATIONALE:
+[Explain why this change is needed. What problem does it solve? What improvement does it provide? How does it benefit the instruction system?]
+
+EXPECTED OUTCOME:
+[Describe what should happen after the change is implemented. What new capabilities will be available? How will workflows be improved?]
+
+VALIDATION REQUIREMENTS:
+[Describe how to verify that the change works correctly. What tests should be performed? What should be checked to ensure no existing functionality is broken?]
+
+PRIORITY:
+[HIGH/MEDIUM/LOW - Indicate the urgency of this request]
+
+COMPLEXITY ASSESSMENT:
+[SIMPLE/MODERATE/COMPLEX - Your assessment of how difficult this change might be]
+
+DEPENDENCIES:
+[List any other changes or requirements that must be in place before this change can be implemented]
+
+ADDITIONAL NOTES:
+[Any other relevant information, context, or considerations for implementing this change]
+
+---
+
+EXAMPLE USAGE:
+
+UPDATE REQUEST: Add Automated Testing Integration to Development Module
+
+DESCRIPTION:
+The current development implementation module (Module 8) does not include automated testing integration. We need to add comprehensive testing steps to ensure code quality and catch issues early in the development process.
+
+AFFECTED MODULES:
+- module_development_implementation.md
+- templates/testing_integration_template.md (new file)
+- docs/testing-guidelines.md (new file)
+
+SPECIFIC CHANGES REQUIRED:
+1. Add testing phase to Module 8 between core development and UI implementation
+2. Create testing integration template with unit test, integration test, and end-to-end test guidelines
+3. Update validation checklists to include test coverage requirements
+4. Add testing-specific issue tracking categories
+5. Include test result validation in git commit requirements
+
+RATIONALE:
+Automated testing is essential for maintaining code quality and preventing regressions. The current system focuses on implementation but lacks systematic testing integration, which could lead to quality issues in production deployments.
+
+EXPECTED OUTCOME:
+After implementation, Module 8 will include comprehensive testing phases that ensure all code is properly tested before deployment. Developers will have clear guidelines for writing and running tests, and the system will enforce test coverage requirements.
+
+VALIDATION REQUIREMENTS:
+- Module 8 includes new testing phase with clear steps
+- Testing templates are created and properly referenced
+- Validation checklists include test coverage verification
+- No existing Module 8 functionality is broken
+- Testing integration works with existing git commit workflow
+
+PRIORITY:
+HIGH
+
+COMPLEXITY ASSESSMENT:
+MODERATE
+
+DEPENDENCIES:
+- Requires understanding of current Module 8 structure
+- May need research on testing best practices for different technology stacks
+- Should integrate with existing GitHub issue tracking system
+
+ADDITIONAL NOTES:
+Consider making testing requirements flexible based on project complexity. Small projects might need basic testing while enterprise projects need comprehensive test suites.

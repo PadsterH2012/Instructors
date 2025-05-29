@@ -1,0 +1,95 @@
+# Agent Execution Rules and Safety Validation
+#
+# Purpose: Validate agent execution rules, safety protocols, and system integrity
+# Scope: Agent startup, safety rules, file organization, resume system, task breakdown
+# Importance: CRITICAL - Ensures agent operates safely and follows system protocols
+
+# ============================================================================
+# AGENT EXECUTION RULES AND SAFETY
+# ============================================================================
+
+## Agent Execution Rules and Safety
+- Agent Startup | Agent Reads Entire Instruction Index Before Taking Action | True/False
+- Past Knowledge Usage | Agent Does NOT Use Past Knowledge or Memory About Similar Projects | False/True (inverted)
+- Project Plan Validation | Agent Reads and Validates project_plan.txt Before Execution | True/False
+- Research-Based Decisions | All Decisions Based on Research Through Specified Tools | True/False
+- Working Directory | Agent Establishes pwd AND date/time Context at Startup | True/False
+
+## File Organization and Safety Rules
+- Instruction Isolation | project_instructions/ Folder Remains Untouched During Execution | True/False
+- Working Files Isolation | All Agent-Created Files Go to project_working_files/ | True/False
+- Safety Design | project_working_files/ Can Be Safely Deleted Without Affecting Instructions | True/False
+- Input Protection | project_plan.txt Located in project_input/ Within project_instructions | True/False
+- Path Calculations | All File Paths Calculated Relative to Established Working Directory | True/False
+
+## Resume System Logic
+- Resume Process | Agent Checks Current Status Before Starting Any Work | True/False
+- Infrastructure Validation | Agent Checks archivebin/ and .gitignore Existence at Startup | True/False
+- Infrastructure Upgrades | Missing Infrastructure Applied Before Proceeding | True/False
+- Status Validation | Agent Validates All Completed Modules Have Required Deliverables | True/False
+- Resume Point | Agent Starts from Correct Point Based on Status Tracking | True/False
+- High-Level Plan Priority | Plan-Based Resume Used When high_level_plan.md Exists | True/False
+- System Upgrade Detection | Agent Detects and Handles New Modules Added to System | True/False
+- Backward Compatibility | Resume System Maintains Compatibility with Existing Projects | True/False
+
+## Task Breakdown System Logic
+- Complex Task Recognition | Agent Recognizes When Tasks Need Breakdown | True/False
+- Quality-Focused Breakdown | Tasks Broken by Logical Components, Not Time Estimates | True/False
+- Hidden Task Files | Breakdown Files Created in working_files/tasks/ Directory | True/False
+- Component Completion | Agent Completes Each Component Thoroughly Before Proceeding | True/False
+- Progress Tracking | Breakdown Files Updated After Each Component Completion | True/False
+- Quality Standards | Each Component Meets Quality Standards Before Moving to Next | True/False
+
+## Critical Read First Logic
+- LLD Processing | Agent Uses view_range for Large Files, Never Processes Entire Files | True/False
+- Reference Approach | Agent References LLD Sections by Line Numbers, Doesn't Copy Large Content | True/False
+- Progressive Implementation | Agent Builds Files Incrementally, Not All at Once | True/False
+- Size Error Prevention | Agent Follows micro_task_framework_v2.md to Prevent Size Errors | True/False
+
+## Package Management Logic
+- Package Manager Usage | Dependencies Installed via Package Managers, NOT Manual File Editing | True/False
+- Manual File Editing | Agent Does NOT Manually Edit package.json, requirements.txt, etc. | False/True (inverted)
+- Correct Commands | Agent Uses Correct Package Manager Commands for Each Language | True/False
+- Version Resolution | Package Managers Handle Version Resolution and Dependency Conflicts | True/False
+- Lock File Updates | Package Managers Update Lock Files Automatically | True/False
+
+# ============================================================================
+# SAFETY AND INTEGRITY VALIDATION
+# ============================================================================
+
+## System Safety:
+- **Instruction Protection**: project_instructions/ folder never modified during execution
+- **Working Isolation**: All agent work contained in project_working_files/
+- **Safe Deletion**: project_working_files/ can be deleted without system damage
+- **Path Safety**: All paths calculated relative to established working directory
+
+## Agent Behavior:
+- **No Past Knowledge**: Agent doesn't use memory from similar projects
+- **Research-Based**: All decisions based on research through specified tools
+- **Instruction Reading**: Agent reads complete instruction index before action
+- **Status Checking**: Agent validates current status before starting work
+
+## Quality Assurance:
+- **Task Breakdown**: Complex tasks properly broken down by logical components
+- **Progressive Implementation**: Files built incrementally, not all at once
+- **Package Management**: Dependencies managed via package managers only
+- **Error Prevention**: Size errors prevented through proper frameworks
+
+# ============================================================================
+# VALIDATION INSTRUCTIONS
+# ============================================================================
+
+## Critical Safety Tests (Must Pass):
+- All file organization and safety rules (prevent system damage)
+- All agent execution rules (ensure proper agent behavior)
+- All resume system logic (ensure reliable restart capability)
+
+## Expected Results:
+- **System Safety**: No risk of instruction system damage
+- **Agent Compliance**: Agent follows all execution protocols
+- **Quality Assurance**: Proper task breakdown and implementation practices
+- **Reliability**: Resume system works correctly across all scenarios
+
+## Total Agent Execution Tests: 25
+## Expected Pass Rate: 100% (All tests critical for system safety and integrity)
+## Impact Level: CRITICAL (Agent execution failures can damage entire system)
