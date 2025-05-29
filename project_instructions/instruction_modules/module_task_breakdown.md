@@ -188,3 +188,43 @@ Update main `status.md` file only when:
 - Encountering blockers that prevent progress
 
 The hidden task files provide detailed tracking without cluttering the main status system.
+
+## Module Completion and Git Integration
+
+When task breakdown activities are complete for a module, execute the following steps:
+
+1. **Update Module Status**
+   - Update ../../project_working_files/status.md to reflect task breakdown completion
+   - Add timestamp and completion notes for task breakdown activities
+   - Document any complex tasks that were successfully broken down
+
+2. **Git Commit for Task Breakdown Completion**
+   - **PRE-COMMIT VALIDATION**: Verify all task breakdown files are complete and in correct locations
+   - **CHECK STATUS**: Run `git status` to review all changes made during task breakdown
+   - **STAGE FILES**: Add all relevant task breakdown files created (respecting .gitignore)
+   - **COMMIT**: Create commit with message:
+     ```
+     "Complete Task Breakdown: [Module Name] - Complex tasks organized for execution
+
+     - Task breakdown files created for complex activities
+     - Quality-focused component organization implemented
+     - Progress tracking established for detailed work
+     - All components defined with completion criteria
+
+     Task Breakdown Status: COMPLETED
+     Ready for: Detailed component execution"
+     ```
+   - **PUSH**: Push committed changes to remote repository
+   - **VALIDATE**: Confirm git repository is clean and synchronized
+
+## Validation Checklist
+
+Before considering task breakdown complete:
+- [ ] All complex tasks have been broken down into manageable components
+- [ ] Task breakdown files created in appropriate working_files/tasks/ directory
+- [ ] Each component has clear completion criteria and quality standards
+- [ ] Progress tracking is established for all breakdown files
+- [ ] Status integration is properly maintained
+- [ ] Git commit for task breakdown completion has been created and pushed
+- [ ] Git repository shows clean status with no uncommitted changes
+- [ ] Remote repository is synchronized with local task breakdown completion

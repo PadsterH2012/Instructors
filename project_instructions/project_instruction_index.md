@@ -10,6 +10,13 @@
 
 ## CRITICAL: Agent Execution Rules
 
+**🚨 GLOBAL RULE ENFORCEMENT REQUIREMENT**:
+- **MANDATORY**: Agents MUST validate ALL global enforcement rules before ANY module execution
+- **BLOCKING**: Any global rule failure MUST prevent module progression
+- **COMPREHENSIVE**: Global rules apply at module start, during execution, at completion, and on resume
+- **NO EXCEPTIONS**: Global rule violations MUST be corrected before continuing
+- **REFERENCE**: See check-list/check-list.txt for complete global rule validation framework
+
 **MANDATORY READING REQUIREMENT**:
 - Agents MUST read this entire instruction index file before taking any action
 - Agents MUST NOT use any past knowledge or memory about similar projects
@@ -20,6 +27,7 @@
 - Before executing any module, agents MUST confirm they have read and understood the project plan
 - All decisions MUST be based solely on research conducted through the specified tools
 - NO assumptions about technology stacks, frameworks, or implementation approaches without explicit research validation
+- **MANDATORY**: Apply standardized module validation framework (start, execution, completion) for every module
 
 **FOLDER PORTABILITY AND SAFETY REQUIREMENT**:
 - This project_instructions folder is designed to be portable and work within any location

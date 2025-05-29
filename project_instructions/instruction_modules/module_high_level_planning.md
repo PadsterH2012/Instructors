@@ -307,12 +307,43 @@ Before marking Module 6 as complete, verify:
 - [ ] Status file (../../project_working_files/status.md) updated to COMPLETED
 - [ ] Status.md has been archived to archivebin/ with timestamp backup
 - [ ] High_level_plan.md is now the primary project roadmap
+- [ ] Git commit for Module 6 completion has been created and pushed
+- [ ] Git repository shows clean status with no uncommitted changes
+- [ ] Remote repository is synchronized with local Module 6 completion
 
 **MANDATORY**: If any planning deliverable is missing or incomplete, repeat the relevant planning steps. The high-level plan becomes the master roadmap for project execution.
 
-**STATUS UPDATE REQUIREMENT**: Update ../../project_working_files/status.md to COMPLETED status with timestamp and completion summary.
+### 6.6 Module Completion and Git Integration
 
-### 6.6 Status File Archiving
+Execute the following module completion steps:
+
+1. **Update Module 6 Status to COMPLETED**
+   - Update ../../project_working_files/status.md to mark Module 6 as COMPLETED
+   - Add timestamp and completion notes
+   - Add entry to the Status Update History section
+
+2. **Git Commit for Module 6 Completion**
+   - **PRE-COMMIT VALIDATION**: Verify all module deliverables are complete and in correct locations
+   - **CHECK STATUS**: Run `git status` to review all changes made during Module 6
+   - **STAGE FILES**: Add all relevant files created during Module 6 (respecting .gitignore)
+   - **COMMIT**: Create commit with message:
+     ```
+     "Complete Module 6: High Level Planning - Master project roadmap established
+
+     - Project context assessment completed with user validation
+     - Comprehensive high-level plan created from all LLD domains
+     - Task derivation completed from all 5 LLD domains
+     - Testing workflow integrated into task structure
+     - Resume system enhanced with plan-based logic
+     - Status file archived with timestamp backup
+
+     Module Status: COMPLETED
+     Next Module: Module 7 - Implementation Tracking"
+     ```
+   - **PUSH**: Push committed changes to remote repository
+   - **VALIDATE**: Confirm git repository is clean and synchronized
+
+### 6.7 Status File Archiving
 
 Execute the following status archiving steps:
 

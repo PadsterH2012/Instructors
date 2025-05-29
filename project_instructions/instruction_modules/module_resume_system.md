@@ -18,11 +18,18 @@
 
 ## Resume Process Flow
 
-### Step 1: Status Assessment
+### Step 1: Global Rule Validation (MANDATORY FIRST STEP)
 
 When an agent starts work, they MUST:
 
-1. **Infrastructure Validation (MANDATORY FIRST STEP)**
+1. **🚨 CRITICAL: Global Rule Enforcement Checkpoint**
+   - **MANDATORY**: Validate ALL global enforcement rules before ANY module work
+   - **BLOCKING**: Any global rule failure MUST prevent module progression
+   - **COMPREHENSIVE**: Check file creation compliance, module transition controls, documentation integrity, error handling protocols
+   - **CROSS-MODULE**: Validate research integration, technology consistency, file path validation, status consistency, quality standards
+   - **NO EXCEPTIONS**: Global rule violations MUST be corrected before continuing
+
+2. **Infrastructure Validation (MANDATORY SECOND STEP)**
    - Check if `../../archivebin/` directory exists
    - Check if `../../.gitignore` file exists with project_instructions/ exclusion
    - If infrastructure missing: Apply infrastructure upgrades before proceeding
@@ -185,35 +192,49 @@ Before resuming any module, verify:
 ```markdown
 ## MANDATORY RESUME PROCESS
 
-1. **Infrastructure Validation (FIRST)**
+1. **🚨 GLOBAL RULE VALIDATION (FIRST - BLOCKING)**
+   - **MANDATORY**: Validate ALL global enforcement rules before ANY work
+   - Check file creation compliance, module transition controls, documentation integrity
+   - Validate research integration, technology consistency, file path validation
+   - Confirm error handling protocols, status consistency, quality standards
+   - **BLOCKING**: Any global rule failure prevents all module progression
+   - **CORRECTION REQUIRED**: Fix all global rule violations before proceeding
+
+2. **Infrastructure Validation (SECOND)**
    - Check if archivebin/ directory exists, create if missing
    - Check if .gitignore exists, create if missing
    - Archive status.md if high_level_plan.md exists and status.md exists
    - Apply all infrastructure upgrades before proceeding
 
-2. **Status Check**
+3. **Status Check and Validation**
    - Read project_instructions/status.md (or archivebin/status.md if archived)
    - Identify current state of all modules
    - Note any IN_PROGRESS or NEEDS_VALIDATION modules
+   - **MANDATORY**: Validate status file accuracy against actual deliverables
+   - **BLOCKING**: Correct any status inconsistencies before proceeding
 
-3. **Validation**
+4. **Module-Specific Validation**
    - For each COMPLETED module, verify deliverables exist
    - Check file locations match expected paths
    - Validate content quality and completeness
+   - **MANDATORY**: Apply standardized module validation framework
 
-4. **Resume Point Determination**
+5. **Resume Point Determination**
    - Find first module that needs work
    - Verify prerequisites are met
+   - **GLOBAL COMPLIANCE**: Ensure global rules maintained before starting
    - If validation failed, restart from failed module
 
-5. **Resume Execution**
-   - Start from determined resume point
-   - Do NOT restart completed work
+6. **Resume Execution**
+   - **MODULE START**: Apply mandatory per-module start validation
+   - Start from determined resume point with global rule compliance
+   - **MODULE EXECUTION**: Maintain global rule compliance throughout
+   - **MODULE COMPLETION**: Apply mandatory per-module completion validation
    - Update status tracking as work progresses
 
-6. **Debug Logging** (if enabled)
-   - Log resume decision process
-   - Document validation results
+7. **Debug Logging** (if enabled)
+   - Log global rule validation results
+   - Document resume decision process
    - Track what work was resumed vs. restarted
 ```
 

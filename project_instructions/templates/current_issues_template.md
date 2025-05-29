@@ -3,6 +3,13 @@
 ## Purpose
 This file tracks active issues that require resolution. Issues should be addressed as soon as possible, preferably at the end of the current phase or when resources become available.
 
+## GitHub Integration
+- **Repository**: [GitHub repository URL]
+- **Issue Labels**: priority-high, priority-medium, priority-low, module-[number], phase-[name], blocker
+- **Sync Status**: Local and GitHub issues are synchronized
+- **Last GitHub Sync**: [YYYY-MM-DD HH:MM]
+- **GitHub CLI**: Use `gh issue list --label "module-[X]" --state open` to check status
+
 ## Issue Status Definitions
 - **OPEN**: Issue identified, needs investigation or resolution
 - **IN_PROGRESS**: Actively working on resolution
@@ -13,6 +20,7 @@ This file tracks active issues that require resolution. Issues should be address
 
 ### Issue #001
 **Status**: OPEN
+**GitHub Issue**: [#GITHUB_ISSUE_NUMBER](https://github.com/[owner]/[repo]/issues/[number])
 **Summary**: [Brief descriptive name]
 **Phase Discovered**: [Module X.Y - Phase Name]
 **Description**: [Detailed description of the issue]
@@ -21,6 +29,9 @@ This file tracks active issues that require resolution. Issues should be address
 **Priority**: [HIGH/MEDIUM/LOW]
 **Date Logged**: [YYYY-MM-DD]
 **Last Updated**: [YYYY-MM-DD]
+**GitHub Status**: [open/closed/in-progress]
+**Assigned To**: [GitHub username or "unassigned"]
+**Blocker**: [YES/NO - Does this block progress?]
 
 ---
 
@@ -37,11 +48,21 @@ This file tracks active issues that require resolution. Issues should be address
 
 ### Issue Resolution Process
 1. **Identify**: Log the issue immediately when discovered
-2. **Prioritize**: Assign priority based on impact
-3. **Investigate**: Research root cause and solutions
-4. **Resolve**: Implement proper fix (no workarounds)
-5. **Validate**: Test the resolution thoroughly
-6. **Remove**: Delete resolved issues from this log
+2. **Create GitHub Issue**: Create corresponding GitHub issue with proper labels
+3. **Prioritize**: Assign priority based on impact
+4. **Investigate**: Research root cause and solutions
+5. **Resolve**: Implement proper fix (no workarounds)
+6. **Validate**: Test the resolution thoroughly
+7. **Close GitHub Issue**: Update GitHub issue with resolution details
+8. **Remove**: Delete resolved issues from this log
+
+### GitHub Integration Process
+1. **Create GitHub Issue**: Use title format `[PRIORITY] Module [X] Phase [Y]: [Brief Description]`
+2. **Add Labels**: Include priority-[level], module-[number], phase-[name], and blocker if applicable
+3. **Cross-Reference**: Add GitHub issue URL to local issue entry
+4. **Sync Status**: Regularly sync GitHub status with local tracking
+5. **Assignment**: Assign issues to appropriate team members
+6. **Resolution**: Close GitHub issue with detailed resolution comment
 
 ### Priority Guidelines
 - **HIGH**: Blocks progress, affects core functionality, security issues

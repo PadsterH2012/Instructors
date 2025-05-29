@@ -190,11 +190,11 @@ Execute the following system date capture steps:
   RESEARCH_CONTEXT=Focus on information from 2024 and late 2023
   ```
 
-### 0.4 Project .gitignore Creation
+### 0.4 Git Repository Initialization and .gitignore Creation
 
-Execute the following .gitignore creation steps:
+Execute the following git repository setup steps:
 
-1. **Create .gitignore File**
+1. **Create .gitignore File First**
    - **MANDATORY LOCATION**: Create ../../.gitignore file in the project root directory
    - **CRITICAL PATH VERIFICATION**: The .gitignore file MUST be created at the same level as project_instructions/ and project_working_files/ directories
    - **WRONG LOCATION**: Do NOT create .gitignore inside project_working_files/ or project_instructions/
@@ -247,13 +247,26 @@ ehthumbs.db
 Thumbs.db
 ```
 
-3. **.gitignore Validation**
+3. **Git Repository Initialization**
+   - **MANDATORY**: Navigate to project root level (same directory as project_instructions/)
+   - **VERIFY**: .gitignore file exists at current directory level
+   - **INITIALIZE**: Run `git init` at project root level (NOT inside any subdirectory)
+   - **VALIDATE**: Run `git status` to verify project_instructions/ and archivebin/ are ignored
+   - **FORBIDDEN**: Never initialize git inside project_working_files/ or project_instructions/ directories
+
+4. **Initial Git Commit**
+   - **STAGE FILES**: Add only appropriate files to git (respecting .gitignore)
+   - **COMMIT**: Create initial commit with message "Initial project setup - Module 0 complete"
+   - **BRANCH SETUP**: Ensure working on main/master branch as appropriate
+   - **VALIDATION**: Confirm git repository is properly initialized and clean
+
+5. **.gitignore and Git Validation**
    - **Location Verification**: Confirm .gitignore file exists at ../../.gitignore (project root level)
    - **Path Validation**: Verify the file is NOT inside project_working_files/ or project_instructions/
    - **Content Verification**: Confirm project_instructions/ is excluded from version control
    - **Archive Verification**: Confirm archivebin/ is excluded from version control
    - **Format Validation**: Test that the file is properly formatted and readable
-   - **Git Test**: If git is available, run `git status` to verify exclusions work correctly
+   - **Git Status Test**: Run `git status` to verify exclusions work correctly and repository is clean
 
 ### 0.5 Project Context Assessment
 
@@ -610,14 +623,35 @@ Before marking any module as COMPLETED, verify:
 5. **Update status as work progresses** - maintain accurate tracking
 ```
 
-### 0.3 Initial Status Update
+### 0.7 Module Completion and Git Integration
 
-Execute the following status update steps:
+Execute the following module completion steps:
 
 1. **Update Module 0 Status to COMPLETED**
    - Update the status file to mark Module 0 as COMPLETED
    - Add timestamp and completion notes
    - Add entry to the Status Update History section
+
+2. **Git Commit for Module 0 Completion**
+   - **PRE-COMMIT VALIDATION**: Verify all module deliverables are complete and in correct locations
+   - **CHECK STATUS**: Run `git status` to review all changes made during Module 0
+   - **STAGE FILES**: Add all relevant files created during Module 0 (respecting .gitignore)
+   - **COMMIT**: Create commit with message:
+     ```
+     "Complete Module 0: Initial Setup - Project foundation established
+
+     - Isolated project working files structure created
+     - Git repository initialized with proper .gitignore
+     - System date context captured for research
+     - Project context assessment completed
+     - Issue tracking system initialized
+     - Status tracking file created
+
+     Module Status: COMPLETED
+     Next Module: Module 1 - Research Phase"
+     ```
+   - **PUSH**: Push committed changes to remote repository
+   - **VALIDATE**: Confirm git repository is clean and synchronized
 
 ## Validation Checkpoint
 
@@ -633,11 +667,18 @@ Before proceeding to Module 1, verify that all setup is complete:
 - [ ] "../../archivebin/" directory exists
 - [ ] "../../.gitignore" file exists in project root (same level as project_instructions/ and project_working_files/) with proper exclusions
 - [ ] .gitignore file is NOT located inside project_working_files/ or project_instructions/ directories
+- [ ] Git repository (.git/) is initialized at project root level (same directory as project_instructions/)
+- [ ] Initial git commit completed with message "Initial project setup - Module 0 complete"
+- [ ] Git status shows project_instructions/ and archivebin/ are ignored (not in untracked files)
+- [ ] Git repository is clean with no untracked files that should be ignored
 - [ ] "../../project_working_files/system_info.env" file exists with current date information
 - [ ] "../../project_working_files/project_context.md" file exists with user responses and implications
 - [ ] "../../project_working_files/status.md" file exists and contains the complete template
 - [ ] Module 0 status is marked as COMPLETED in status.md
 - [ ] Status update history contains the completion entry for Module 0
+- [ ] Git commit for Module 0 completion has been created and pushed
+- [ ] Git repository shows clean status with no uncommitted changes
+- [ ] Remote repository is synchronized with local Module 0 completion
 - [ ] If debug mode enabled: "../../project_working_files/debug_log.md" file exists in isolated area
 - [ ] If debug mode enabled: Debug log shows Module 0 completion with validation results
 - [ ] Verify project_instructions/ folder remains completely untouched
